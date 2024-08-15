@@ -1,48 +1,50 @@
-import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
-
-import imgdetails1 from "../component_Phuc/imageDetails/Ao_San_Pham_Moi/Ao_San_Pham_Moi_1/AT.CP.220.webp"
-import imgdetails2 from "../component_Phuc/imageDetails/Ao_San_Pham_Moi/Ao_San_Pham_Moi_1/AT.CP.221.webp"
-import imgdetails3 from "../component_Phuc/imageDetails/Ao_San_Pham_Moi/Ao_San_Pham_Moi_1/AT.CP.223.webp"
-import imgdetails4 from "../component_Phuc/imageDetails/Ao_San_Pham_Moi/Ao_San_Pham_Moi_1/AT.CP.224.webp"
-
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function DetailsProduct() {
+    const location = useLocation();
+    const product = location.state.item || {};
 
-    const productId = useParams();
-    console.log(productId)
 
-    const [ImageShow, setImageShow] = useState(imgdetails1)
-    const [ImageList, setImageList] = useState([
-        {
-            img: imgdetails1
-        },
-        {
-            img: imgdetails2
-        },
-        {
-            img: imgdetails3
-        },
-        {
-            img: imgdetails4
-        },
-    ])
+    const [ImageShow, setImageShow] = useState(product ? product.detailimage1 : '');
+    const [ImageList, setImageList] = useState(product ? [product.detailimage1, product.detailimage2, product.detailimage3, product.detailimage4] : []);
+    const [AmoutProduct, setAmountProduct] = useState(1);
+
+    useEffect(() => {
+        if (product) {
+            setImageShow(product.detailimage1);
+            setImageList([product.detailimage1, product.detailimage2, product.detailimage3, product.detailimage4]);
+        }
+    }, [product]);
+
     const ChangeImageShow = (num) => {
-        setImageShow(ImageList[num].img)
+        setImageShow(ImageList[num]);
+    };
+
+    const DecreaseAmount = () => {
+        if (AmoutProduct <= 1) {
+            setAmountProduct(1)
+        } else {
+            setAmountProduct(prev => prev - 1);
+        }
     }
+
+    const IncreaseAmount = () => {
+        setAmountProduct(prev => prev + 1);
+    }
+
     return (
         <div className='container text-center' style={{ height: "auto" }}>
             <div style={{ textAlign: "left" }}>
-                <p>Trang chủ <span> / Chi tiết sản phẩm</span></p>
+                <p><a href="http://localhost:3000/">Trang chủ</a> <span> / Chi tiết sản phẩm</span></p>
             </div>
 
             <div className='d-flex justify-content-evenly' style={{ marginTop: "20px" }}>
                 <div style={{ width: "8%" }}>
                     <div >
-                        <div onClick={() => ChangeImageShow(0)} style={{ padding: '20px' }}><img src={imgdetails1} style={{ maxWidth: '45px' }} /></div>
-                        <div onClick={() => ChangeImageShow(1)} style={{ padding: '20px' }}><img src={imgdetails2} style={{ maxWidth: '45px' }} /></div>
-                        <div onClick={() => ChangeImageShow(2)} style={{ padding: '20px' }}><img src={imgdetails3} style={{ maxWidth: '45px' }} /></div>
-                        <div onClick={() => ChangeImageShow(3)} style={{ padding: '20px' }}><img src={imgdetails4} style={{ maxWidth: '45px' }} /></div>
+                        {ImageList.map(((item, idx) => {
+                            return <div onClick={() => ChangeImageShow(idx)} style={{ padding: '20px' }}><img src={item} style={{ maxWidth: '45px' }} /></div>
+                        }))}
                     </div>
                 </div>
 
@@ -55,47 +57,159 @@ function DetailsProduct() {
 
                 <div style={{ width: "42%" }}>
                     <div>
-                        <h1 className='' style={{ textAlign: "left" }}>Áo thun nam thể thao Active logo</h1>
-                        <p className='text-start'>Thoáng khí</p>
+                        <h1 className='' style={{ textAlign: "left" }}>{product.name}</h1>
+                        <p className='text-start'>{product.type}</p>
 
                         <div style={{ textAlign: "left" }}>
-                            <div><s>199.000đ</s></div>
-                            <div>
-                                <h3>99.000đ<span style={{ backgroundColor: "blue", color: "white", marginLeft: "10px" }}>-50%</span></h3>
+                            <div style={{ margin: '5px 0px' }}><s>199.000đ</s></div>
+                            <div style={{ margin: '5px 0px' }}>
+                                <h3>{product.price}<span style={{ backgroundColor: "blue", color: "white", marginLeft: "10px", borderRadius: "10px" }}>-50%</span></h3>
+                            </div>
 
+                            <div className='rounded-pill' style={{ margin: '10px 0px', backgroundColor: '#dbd7d7', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                <h6>Giảm thêm 10K/sản phẩm cho đơn từ 3 sản phẩm thể thao bất kỳ</h6>
                             </div>
                         </div>
 
-                        <div className='rounded p-1 bg-opacity-10 border border-info border-start-0 rounded-end' style={{ display: "flex" }}>
+                        <div className='rounded p-1 bg-opacity-10 border border-info border-start-0 rounded-end' style={{ display: "flex", margin: '15px 0px' }}>
                             <div>
-                                <p><h6 style={{ color: "blue" }}>Áo thun thể thảo Coolmate Basics</h6></p>
-                                <p><h6>Tặng cho hoá đơn thanh toán từ 399k</h6></p>
+                                <p className="important-margin"><h6 style={{ color: "blue" }}>Áo thun thể thảo Coolmate Basics</h6></p>
+                                <p className="important-margin"><h6>Tặng cho hoá đơn thanh toán từ 399k</h6></p>
                             </div>
-                            <div>
-                                <img src="" alt="" />
+                            <div style={{ paddingLeft: "20px" }}>
+                                <div style={{ display: "flex" }}>
+                                    <div className=''>
+                                        <img src="https://media3.coolmate.me/cdn-cgi/image/width=400,height=400,quality=80,format=auto/uploads/July2024/Tuong_1.jpg" className='tw-object-cover rounded-circle' style={{ maxHeight: "70px", marginTop: "10px" }} />
+                                    </div>
+                                    <div>
+                                        <img src="https://media3.coolmate.me/cdn-cgi/image/width=400,height=400,quality=80,format=auto/uploads/July2024/Tuong_10.jpg" className='tw-object-cover rounded-circle' style={{ maxHeight: "70px", marginTop: "10px" }} />
+                                    </div>
+                                    <div>
+                                        <img src="https://media3.coolmate.me/cdn-cgi/image/width=400,height=400,quality=80,format=auto/uploads/July2024/Tuong_15.jpg" className='tw-object-cover rounded-circle' style={{ maxHeight: "70px", marginTop: "10px" }} />
+                                    </div>
+                                    <div>
+                                        <img src="https://media3.coolmate.me/cdn-cgi/image/width=400,height=400,quality=80,format=auto/uploads/July2024/Tuong_5.jpg" className='tw-object-cover rounded-circle' style={{ maxHeight: "70px", marginTop: "10px" }} />
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div>
-                            <p>Mau sac: Xanh Navy</p>
-                            <img src="" alt="" />
+                            <p style={{ textAlign: "left", margin: '5px 0px' }}>Màu sắc: <span style={{ fontWeight: "bold" }}>{product.description}</span>
+                                <img src={product.colorurl} className='tw-object-cover rounded-circle' style={{ maxHeight: "30px", width: "45px", marginLeft: "15px" }} />
+                            </p>
+
                         </div>
 
                         <div>
-                            <p>Kich thuoc</p>
-                            <span>S</span>
-                            <span>M</span>
-                            <span>L</span>
-                            <span>XL</span>
+                            <div className="row justify-content-between">
+                                <div className="col-4">
+                                    Kích thước:
+                                </div>
+                                <div className="col-4">
+                                    <a href="https://www.coolmate.me/product/ao-singlet-nam-chay-bo-khong-duong-may-coolfast-sieu-nhe-exdry-thoang-mat?color=xanh-danube#size-guide" style={{ textDecoration: 'underline' }}>Hướng dẫn chọn size:</a>
+                                </div>
+                            </div>
+
+                            <div className="container text-center" style={{ margin: '15px 0px' }}>
+                                <div className="row align-items-start">
+                                    <div className="col rounded-pill" style={{ backgroundColor: "darkgray", margin: '0px 10px' }}>
+                                        <span><h4>S</h4></span>
+                                    </div>
+                                    <div className="col rounded-pill" style={{ backgroundColor: "darkgray", margin: '0px 10px' }}>
+                                        <span><h4>M</h4></span>
+                                    </div>
+                                    <div className="col rounded-pill" style={{ backgroundColor: "darkgray", margin: '0px 10px' }}>
+                                        <span><h4>L</h4></span>
+                                    </div>
+                                    <div className="col rounded-pill" style={{ backgroundColor: "darkgray", margin: '0px 10px' }}>
+                                        <span><h4>XL</h4></span>
+                                    </div>
+                                    <div className="col rounded-pill" style={{ backgroundColor: "darkgray", margin: '0px 10px' }}>
+                                        <span><h4>2XL</h4></span>
+                                    </div>
+                                    <div className="col rounded-pill" style={{ backgroundColor: "darkgray", margin: '0px 10px' }}>
+                                        <span><h4>3XL</h4></span>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="alert alert-primary" role="alert">
-                            A simple primary alert—check it out!
+                        <div className='d-flex justify-content-around' id='buy-amount'>
+                            <div>
+
+                                <button onClick={() => DecreaseAmount()}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
+                                    </svg>
+
+                                </button>
+
+                                <input type="text" name="" id="amount" value={AmoutProduct} />
+                                <button onClick={() => IncreaseAmount()}>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                    </svg>
+                                </button>
+
+                            </div>
+                            <div className='d-inline-flex p-2 btn-amout rounded-pill'>
+                                <h6>Chọn Kích Thước</h6>
+                            </div>
                         </div>
 
+                        <div class="d-flex p-2" style={{ marginTop: '10px' }}>
+                            <img src="https://page.widget.zalo.me/static/images/2.0/Logo.svg" style={{ width: "40px" }} />
+                            <span style={{ display: 'flex', alignItems: 'center', marginLeft: '20px' }}>
+                                <a href="https://zalo.me/1517736583279228381">Chat zalo để được tư vấn ngay! (8am - 22pm)</a>
+                            </span>
+                        </div>
+
+                        <div class="container text-center">
+                            <div class="row">
+                                <div class="col d-inline-flex p-2">
+                                    <img src="https://www.coolmate.me/images/product-detail/return.svg" style={{ width: "40px" }} />
+                                    <span style={{ display: 'flex', alignItems: 'center', marginLeft: '20px' }}>
+                                        Đổi trả cực dễ chỉ cần số điện thoại
+                                    </span>
+                                </div>
+                                <div class="col d-inline-flex p-2">
+                                    <img src="https://www.coolmate.me/images/product-detail/return-60.svg" style={{ width: "40px" }} />
+                                    <span style={{ display: 'flex', alignItems: 'center', marginLeft: '20px' }}>
+                                        60 ngày đổi trả vì bất kỳ lý do gì
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-inline-flex p-2">
+                                    <img src="https://www.coolmate.me/images/product-detail/phone.svg" style={{ width: "40px" }} />
+                                    <span style={{ display: 'flex', alignItems: 'center', marginLeft: '20px' }}>
+                                        Hotline 1900.27.27.37 hỗ trợ từ 8h30 - 22h mỗi ngày
+                                    </span>
+                                </div>
+                                <div class="col d-inline-flex p-2">
+                                    <img src="https://www.coolmate.me/images/product-detail/location.svg" style={{ width: "40px" }} />
+                                    <span style={{ display: 'flex', alignItems: 'center', marginLeft: '20px' }}>
+                                        Đến tận nơi nhận hàng trả, hoàn tiền trong 24h
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <div style={{ textAlign: "left" }}>
+                <p><h3>Chi tiết sản phẩm</h3></p>
+            </div>
+            <div style={{ width: "1272px" }}>
+            <img src={product.detailimageBig1} alt="" className='ImageDetailsBig'/>
+            <img src={product.detailimageBig2} alt="" className='ImageDetailsBig'/>
+            </div>
+            
+            
         </div>
     )
 }
