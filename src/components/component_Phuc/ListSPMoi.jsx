@@ -1,15 +1,13 @@
 import React from 'react';
 import data from '../../data/data.json';
 import newtag from "../../data/assets/Resource/NewTag.png";
-import DetailsProduct from './DetailsProduct';
 import '../../data/assets/css/style homepage.css';
 import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
-
+import { useLocation } from 'react-router-dom';
 
 function ListSPMoi() {
-
     const [dataProductNew, setDatadataProductNew] = useState([]);
 
     useEffect(() => {
@@ -21,12 +19,9 @@ function ListSPMoi() {
         setDatadataProductNew([...newData]);
     }, [data.productNew]);
 
-    const ShowDetail = () => {
-        // const productId = useParams();
-
-        // console.log(productId)
-    }
-
+    dataProductNew.map((item) => {
+        // console.log(dataProductNew)
+    })
     return (
         <div>
             <div id="newproduct-header">Sản phẩm mới</div>
@@ -44,11 +39,14 @@ function ListSPMoi() {
                                         <i className="fa fa-cart-plus"></i> Thêm vào giỏ
                                     </button>
 
-                                    <button type="button" className="col-6 py-2" onClick={ShowDetail}>
-                                        <Link to="/Products/key">
-                                        <i className="fa fa-cart-plus"></i> Xem chi chi tiết </Link>
-                                    </button>
+                                    <button type="button" className="col-6 py-2">
+                                        <Link to={{
+                                            pathname: `/Products/${item.id}`
+                                        }} state={{ item }}>
+                                            <i className="fa fa-cart-plus" style={{ color: "white!" }}></i> Xem chi tiết
+                                        </Link>
 
+                                    </button>
                                 </div>
                             </div>
 
@@ -76,18 +74,10 @@ function ListSPMoi() {
                                     <span>({item.review} đánh giá)</span>
                                 </div>
                             </div>
-
                         </div>
-
                     })}
                 </div>
-
-
-
             </div>
-
-
-
         </div>
     );
 }
