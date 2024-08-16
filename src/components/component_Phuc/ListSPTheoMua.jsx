@@ -1,30 +1,50 @@
 import React from 'react';
-import data from '../../data/data.json';
+// import data from '../../data/data.json';
 import newtag from "../../data/assets/Resource/NewTag.png";
 import '../../data/assets/css/style homepage.css';
+// import '../../data/assets/css/owl.carousel.css'
 import { useState, useEffect } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
+import { Link } from 'react-router-dom';
 
 function ListSPTheoMua() {
 
-    const [dataProductSeasonal, setdataProductSeasonal] = useState([]);
+    const [dataAPI, setDataAPI] = useState(null);
 
     useEffect(() => {
-        const newData = data.productSeasonal.map(item => ({
-            id: uuidv4(),
-            ...item
-        }));
+        const fetchData = async () => {
+            try {
+                const res = await fetch('https://66beccce42533c40314414cb.mockapi.io/ListSPTheoMua');
+                const dataAPI = await res.json();
+                setDataAPI(dataAPI);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
 
-        setdataProductSeasonal([...newData]);
-    }, [data.productSeasonal]);
+        fetchData();
+    }, []);
+
+
+
+    // const [dataProductSeasonal, setdataProductSeasonal] = useState([]);
+
+    // useEffect(() => {
+    //     const newData = data.productSeasonal.map(item => ({
+    //         id: uuidv4(),
+    //         ...item
+    //     }));
+
+    //     setdataProductSeasonal([...newData]);
+    // }, [data.productSeasonal]);
 
     return (
         <div>
             <div id="newproduct-header">Sản phẩm theo mùa</div>
             <div className="container">
                 <div className="row g-4 my-5 mx-auto owl-carousel owl-theme">
-                    {dataProductSeasonal.map((item) => {
-                        return <div className="col product-item mx-auto" key={item.id}>
+                {Array.isArray(dataAPI) ? (dataAPI.map((item) => {
+                        return <div className="col product-item mx-auto margin-important" key={item.id}>
                             <div className="product-img">
                                 <img src={item.image} alt="" className="img-fluid d-block mx-auto"></img>
                                 <span className="heart-icon">
@@ -34,8 +54,14 @@ function ListSPTheoMua() {
                                     <button type="button" className="col-6 py-2">
                                         <i className="fa fa-cart-plus"></i> Thêm vào giỏ
                                     </button>
+
                                     <button type="button" className="col-6 py-2">
-                                        <i className="fa fa-binoculars"></i> Xem chi tiết
+                                        <Link to={{
+                                            pathname: `/Products/${item.id}`
+                                        }} state={{ item }}>
+                                            <i className="fa fa-cart-plus" style={{ color: "white!" }}></i> Xem chi tiết
+                                        </Link>
+
                                     </button>
                                 </div>
                             </div>
@@ -64,9 +90,10 @@ function ListSPTheoMua() {
                                     <span>({item.review} đánh giá)</span>
                                 </div>
                             </div>
-
                         </div>
-                    })}
+                    })) : 
+                    <p>Loading...</p>}
+                    
                 </div>
 
             </div>

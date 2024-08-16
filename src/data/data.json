@@ -13,7 +13,8 @@
             "detailimage3": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/July2024/24CMAW.AT027.6_53.jpg",
             "detailimage4": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/July2024/24CMAW.AT027.5_47.jpg",
             "detailimageBig1": "https://mcdn.coolmate.me/image/July2024/mceclip0_136.jpg",
-            "detailimageBig2": "https://mcdn.coolmate.me/image/June2024/mceclip1_76.jpg"
+            "detailimageBig2": "https://mcdn.coolmate.me/image/June2024/mceclip1_76.jpg",
+            "id": "1"
         },
         {
             "name": "Áo Singlet Nam Chạy Bộ Graphic Photic Zone",
@@ -28,7 +29,8 @@
             "detailimage3": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/July2024/24CMAW.TT013.20.jpg",
             "detailimage4": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/July2024/24CMAW.TT013.24.jpg",
             "detailimageBig1": "https://mcdn.coolmate.me/image/August2024/mceclip0_56.jpg",
-            "detailimageBig2": "https://mcdn.coolmate.me/image/August2024/mceclip0_56.jpg"
+            "detailimageBig2": "https://mcdn.coolmate.me/image/August2024/mceclip0_56.jpg",
+            "id": "2"
         },
         {
 
@@ -44,7 +46,8 @@
             "detailimage3": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/July2024/24CMAW.QS025.35.jpg",
             "detailimage4": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/July2024/24CMAW.QS025.34.jpg",
             "detailimageBig1": "https://mcdn.coolmate.me/image/January2024/mceclip0_80.jpg",
-            "detailimageBig2": "https://mcdn.coolmate.me/image/January2024/mceclip1_36.jpg"
+            "detailimageBig2": "https://mcdn.coolmate.me/image/January2024/mceclip1_36.jpg",
+            "id": "3"
         },
         {
             "name": "Áo Thun Nam Chạy Bộ Graphic Photic Zone",
@@ -59,7 +62,8 @@
             "detailimage3": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/August2024/24CMAW.AT025.555_89.jpg",
             "detailimage4": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/August2024/24CMAW.AT025.3333344_5.jpg",
             "detailimageBig1": "https://mcdn.coolmate.me/image/July2024/mceclip0_136.jpg",
-            "detailimageBig2": "https://mcdn.coolmate.me/image/June2024/mceclip1_76.jpg"
+            "detailimageBig2": "https://mcdn.coolmate.me/image/June2024/mceclip1_76.jpg",
+            "id": "4"
         },
         {
             "name": "Quần chạy bộ Advanced Vent Tech",
@@ -74,7 +78,8 @@
             "detailimage3": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden4.jpg",
             "detailimage4": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden5.jpg",
             "detailimageBig1": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-dac-diem-noi-bat.jpg",
-            "detailimageBig2": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-soi-sorona.jpg"
+            "detailimageBig2": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-soi-sorona.jpg",
+            "id": "5"
         }
     ],
     "productSeasonal": [
@@ -82,41 +87,81 @@
             "name": "Áo Khoác Nam gió Thể Thao phối màu",
             "type": "Áo khoác",
             "description": "Chốn UV 99%/Rêu phối đen",
+            "colorurl": "https://media3.coolmate.me/cdn-cgi/image/width=160,height=160,quality=80,format=auto/uploads/July2024/24CMAW.TT013.28.jpg",
             "price": 299000,
             "image": "https://media3.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85/uploads/July2024/Ao_Polo_Nam_dai_tay_Essentials.den.collection.jpg",
-            "review": 235
+            "review": 235,
+            "detailimage1": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden2.jpg",
+            "detailimage2": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden3.jpg",
+            "detailimage3": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden4.jpg",
+            "detailimage4": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden5.jpg",
+            "detailimageBig1": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-dac-diem-noi-bat.jpg",
+            "detailimageBig2": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-soi-sorona.jpg",
+            "id": "1"
         },
         {
             "name": "Áo ám Nỉ chui đầu Lifewear nam cao cấp",
             "type": "Áo ấm",
             "description": "Giữ ấm/Xám sáng",
+            "colorurl": "https://media3.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85/uploads/June2024/24CMAW.QJ002.5.jpg",
             "price": 189000,
             "image": "https://media3.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85/uploads/March2023/ao-dai-tay-compact-v2-xam3.jpg",
-            "review": 73
+            "review": 73,
+            "detailimage1": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden2.jpg",
+            "detailimage2": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden3.jpg",
+            "detailimage3": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden4.jpg",
+            "detailimage4": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden5.jpg",
+            "detailimageBig1": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-dac-diem-noi-bat.jpg",
+            "detailimageBig2": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-soi-sorona.jpg",
+            "id": "2"
         },
         {
             "name": "Áo Khoác giữ ấm Nam phao Puffer cao cấp",
             "type": "Đồ chạy bộ",
-            "description": "Siêu ấm/Xanh",
+            "description": "Siêu ấm/Xanh",            
+            "colorurl": "https://media3.coolmate.me/cdn-cgi/image/width=160,height=160,quality=80,format=auto/uploads/July2024/24CMAW.TT013.28.jpg",
             "price": 349000,
             "image": "https://media3.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85/uploads/November2023/23CMCW.ST001.5_96.jpg",
-            "review": 301
+            "review": 301,
+            "detailimage1": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden2.jpg",
+            "detailimage2": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden3.jpg",
+            "detailimage3": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden4.jpg",
+            "detailimage4": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden5.jpg",
+            "detailimageBig1": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-dac-diem-noi-bat.jpg",
+            "detailimageBig2": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-soi-sorona.jpg",
+            "id": "3"
         },
         {
             "name": "Áo Khoác Nam có mũ Daily Wear cao cấp",
             "type": "Áo khoác",
-            "description": "Chống UV 99%/Trắng",
+            "description": "Chống UV 99%/Trắng",            
+            "colorurl": "https://media3.coolmate.me/cdn-cgi/image/width=160,height=160,quality=80,format=auto/uploads/July2024/24CMAW.TT013.28.jpg",
             "price": 299000,
             "image": "https://media3.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85/uploads/November2021/43.jpg",
-            "review": 98
+            "review": 98,
+            "detailimage1": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden2.jpg",
+            "detailimage2": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden3.jpg",
+            "detailimage3": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden4.jpg",
+            "detailimage4": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden5.jpg",
+            "detailimageBig1": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-dac-diem-noi-bat.jpg",
+            "detailimageBig2": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-soi-sorona.jpg",
+            "id": "4"
         },
         {
             "name": "Quần Dài Jogger Nam Chạy Bộ Fast & Free",
             "type": "Đồ chạy bộ",
             "description": "Nhanh khô/Xám sáng",
+            "colorurl": "https://media3.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85/uploads/June2024/24CMAW.QJ002.5.jpg",
             "price": 259000,
             "image": "https://media3.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85/uploads/November2023/dt001.gym.18.jpg",
-            "review": 78
+            "review": 78,
+            "detailimage1": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden2.jpg",
+            "detailimage2": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden3.jpg",
+            "detailimage3": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden4.jpg",
+            "detailimage4": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden5.jpg",
+            "detailimageBig1": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-dac-diem-noi-bat.jpg",
+            "detailimageBig2": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-soi-sorona.jpg",
+            "id": "5"
         }
     ],
     "productRun": [
@@ -124,89 +169,82 @@
             "name": "Áo Singlet Nam Chạy Bộ Graphic Photic Zone",
             "type": "Đồ chạy bộ",
             "description": "Mỏng nhẹ/Xanh dương",
+            "colorurl": "https://media3.coolmate.me/cdn-cgi/image/width=160,height=160,quality=80,format=auto/uploads/May2024/24CMCW.SM006.BLI.10.jpg",
             "price": 189000,
             "image": "https://media3.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85/uploads/June2023/Quan_lot_Gym_Powerfit-listing-24.jpg",
-            "review": 235
+            "review": 235,
+            "detailimage1": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden2.jpg",
+            "detailimage2": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden3.jpg",
+            "detailimage3": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden4.jpg",
+            "detailimage4": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden5.jpg",
+            "detailimageBig1": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-dac-diem-noi-bat.jpg",
+            "detailimageBig2": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-soi-sorona.jpg",
+            "id": "1"
         },
         {
             "name": "Áo Singlet Nam Chạy Bộ Graphic Photic Zone",
             "type": "Đồ chạy bộ",
             "description": "Mỏng nhẹ/Hồng",
+            "colorurl": "https://media3.coolmate.me/cdn-cgi/image/width=160,height=160,quality=80,format=auto/uploads/July2024/12345678.6.jpg",
             "price": 189000,
-            "image": "https://media3.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85/uploads/December2023/QD001.24_53fx.jpg",
-            "review": 142
+            "image": "https://media3.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85/uploads/November2023/dt001.gym.18.jpg",
+            "review": 142,
+            "detailimage1": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden2.jpg",
+            "detailimage2": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden3.jpg",
+            "detailimage3": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden4.jpg",
+            "detailimage4": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden5.jpg",
+            "detailimageBig1": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-dac-diem-noi-bat.jpg",
+            "detailimageBig2": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-soi-sorona.jpg",
+            "id": "2"
         },
         {
             "name": "Áo Singlet Nam Chạy Bộ Graphic Photic Zone",
             "type": "Đồ chạy bộ",
             "description": "Mỏng nhẹ/Đen",
+            "colorurl": "https://media3.coolmate.me/cdn-cgi/image/width=160,height=160,quality=80,format=auto/uploads/July2024/24CMAW.TT013.28.jpg",
             "price": 189000,
             "image": "https://media3.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85/uploads/July2024/Advanced_Fast_xanh_333.jpg",
-            "review": 301
+            "review": 301,
+            "detailimage1": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden2.jpg",
+            "detailimage2": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden3.jpg",
+            "detailimage3": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden4.jpg",
+            "detailimage4": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden5.jpg",
+            "detailimageBig1": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-dac-diem-noi-bat.jpg",
+            "detailimageBig2": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-soi-sorona.jpg",
+            "id": "3"
         },
         {
             "name": "Áo Thun Nam Chạy Bộ Graphic Photic Zone",
             "type": "Đồ chạy bộ",
             "description": "Mỏng nhẹ/Cam",
+            "colorurl": "https://media3.coolmate.me/cdn-cgi/image/width=160,height=160,quality=80,format=auto/uploads/July2024/24CMAW.TT013.28.jpg",
             "price": 189000,
             "image": "https://media3.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85/uploads/August2024/24CMAW.AT024.36.jpg",
-            "review": 98
+            "review": 98,
+            "detailimage1": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden2.jpg",
+            "detailimage2": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden3.jpg",
+            "detailimage3": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden4.jpg",
+            "detailimage4": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden5.jpg",
+            "detailimageBig1": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-dac-diem-noi-bat.jpg",
+            "detailimageBig2": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-soi-sorona.jpg",
+            "id": "4"
         },
         {
             "name": "Combo 3 Quần Lót Nam Trunk Excool Basics",
             "type": "Đồ lót nam",
             "description": "Microfiber/Xanh trắng",
+            "colorurl": "https://media3.coolmate.me/cdn-cgi/image/width=160,height=160,quality=80,format=auto/uploads/August2023/APoL100-mau2-5.jpg",
             "price": 299000,
             "image": "https://media3.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85/uploads/March2024/thumb24CMAW.AT015.24.jpg",
-            "review": 78
-        },
-        {
-            "name": "Quần Dài Jogger Nam Chạy Bộ Fast & Free",
-            "type": "Đồ chạy bộ",
-            "description": "Microfiber/Xanh trắng",
-            "price": 259000,
-            "image": "https://media3.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85/uploads/January2024/thumb23CMAW.AT003.3.jpg",
-            "review": 135
-        }
-    ],
-    "productThun": [
-        {
-            "id": 1,
-            "name": "Áo Singlet Nam Chạy Bộ Graphic Photic Zone",
-            "type": "Đồ chạy bộ",
-            "description": "Mỏng nhẹ/Xanh dương",
-            "price": 189000,
-            "image": "./assets/Resource/New01.jpg",
-            "review": 235
-        },
-        {
-            "id": 2,
-            "name": "Áo Singlet Nam Chạy Bộ Graphic Photic Zone",
-            "type": "Đồ chạy bộ",
-            "description": "Mỏng nhẹ/Hồng",
-            "price": 189000,
-            "image": "./assets/Resource/New02.jpg",
-            "review": 142
-        },
-        {
-            "id": 3,
-            "name": "Áo Singlet Nam Chạy Bộ Graphic Photic Zone",
-            "type": "Đồ chạy bộ",
-            "description": "Mỏng nhẹ/Đen",
-            "price": 189000,
-            "image": "./assets/Resource/New03.jpg",
-            "review": 301
-        },
-        {
-            "id": 4,
-            "name": "Áo Thun Nam Chạy Bộ Graphic Photic Zone",
-            "type": "Đồ chạy bộ",
-            "description": "Mỏng nhẹ/Cam",
-            "price": 189000,
-            "image": "./assets/Resource/New04.jpg",
-            "review": 98
+            "review": 78,
+            "detailimage1": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden2.jpg",
+            "detailimage2": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden3.jpg",
+            "detailimage3": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden4.jpg",
+            "detailimage4": "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden5.jpg",
+            "detailimageBig1": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-dac-diem-noi-bat.jpg",
+            "detailimageBig2": "https://mcdn.coolmate.me/image/March2023/quan-jogger-nam-soi-sorona.jpg",
+            "id": "5"
         }
     ]
-    
 }
 
