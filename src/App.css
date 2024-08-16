@@ -123,3 +123,9 @@
 .ImageDetailsBig {
   max-width: -webkit-fill-available;
 }
+
+.margin-important {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+}
+
