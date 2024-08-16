@@ -1,0 +1,98 @@
+*{
+    font-family: 'Pangea Afrikan Trial SemiBold';
+}
+#navbar {
+    background-color: white;
+    height: fit-content;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/*tạo double shadơ*/
+    position: sticky;
+    position: -webkit-sticky;
+    z-index:11;
+    top: 0;
+}
+  
+a{
+    text-decoration: none;
+}
+
+
+a:hover.navitem {
+    background-color: black;
+    color: white;
+}
+
+a:hover#login {
+    background-color: red;
+    color: white;
+}
+
+a:hover .mainmenu-link-item{
+    background-color: rgb(100, 100, 100);
+}
+
+#login{
+    height: 85%;
+    border-radius: 7px;
+    box-sizing: content-box;
+    padding: 15px 5px 15px 5px;
+    color:#f84258;
+}
+
+.logo-name{
+     color:#f84258;
+}
+.logo-name:hover{
+    color:#f84258;
+    text-decoration: none;
+}
+
+.logo img{
+    height: 25px;
+}
+
+.mainmenu-logo img{
+    height: 50px;
+}
+
+.nav-links{
+    display:flex;
+    list-style: none;
+    width:60%;
+    justify-content: flex-end;
+    align-items: center;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size:12px;
+    font-family: 'Pangea Afrikan Trial SemiBold';
+    margin-top: 0;
+    margin-bottom: 0 !important;
+    gap: 10px;
+}
+
+.navitem{
+    box-sizing: content-box;
+    padding: 15px 5px 15px 5px;
+    border-radius: 7px;
+    color: black;
+}
+
+a:hover#login {
+    background-color: red;
+    color: white;
+}
+
+a:hover .mainmenu-link-item{
+    background-color: rgb(100, 100, 100);
+}
+
+#login{
+    height: 85%;
+    border-radius: 7px;
+    box-sizing: content-box;
+    padding: 15px 5px 15px 5px;
+    color:#f84258;
+}

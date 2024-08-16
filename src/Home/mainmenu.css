@@ -1,0 +1,104 @@
+.mainmenu {
+    background-color:rgb(40, 36, 36);
+    height: fit-content;
+    padding: 0px 10px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/*tạo double shadơ*/
+    z-index: 10;/*làm thanh đầu trang luôn nổi lên trên tất cả các element còn lại trên trang web*/
+    position:-webkit-sticky;
+    position: sticky;
+    top: 46px;
+}
+
+.mainmenu-logo{
+    width: 20%;
+}
+
+.mainmenu-link {
+    display:flex;
+    flex-wrap:wrap;
+    width: 60%;
+    height: 100%;
+    justify-content:center;
+    gap: 0;
+    align-items: center;
+    letter-spacing: 2px;
+    font-weight:100;
+    font-size:13px;
+    font-family: 'Pangea Afrikan Trial Medium';
+}
+
+.mainmenu-link-product {
+    box-sizing: content-box;
+    height:100%;
+    line-height: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: orangered;
+    color: white;
+}
+.mainmenu-link-item {
+    box-sizing: content-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    height:100%;
+    line-height: 70px;
+    color: white;
+}
+
+.searchbar {
+    width: 75%;
+    height: 40px;
+    box-sizing: border-box;
+    border: 2px solid #d4d4d4;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    gap: 10px;
+    padding: 0 5px 0px 5px;
+    align-items: center;
+}
+
+input {
+    outline: none;
+}
+
+.search-input {
+    color: rgb(44, 43, 43);
+    height: 100%;
+    width:80%;
+    font-size: 18px;
+    font-family: 'Pangea Afrikan Trial Medium';
+}
+
+.search-input > input {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    border: 0px;
+    font-family: 'Pangea Afrikan Trial Medium';
+}
+
+.search-icon img {
+    height: 30px;
+}
+
+.img-cart {
+    width: 5%;
+}
+
+.img-cart img {
+    height: 30px;
+}
+
+.search-cart {
+    display:flex;
+    width: 20%;
+    height: 100%;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+    margin-right: 10px;
+}

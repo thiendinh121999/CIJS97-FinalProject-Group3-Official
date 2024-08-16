@@ -6,7 +6,7 @@
             "type": "Đồ chạy bộ",
             "description": "Mỏng nhẹ/Xanh dương",
             "price": 189000,
-            "image": "./assets/Resource/New01.jpg",
+            "image": "./img/New01.jpg",
             "review": 235
         },
         {
@@ -15,7 +15,7 @@
             "type": "Đồ chạy bộ",
             "description": "Mỏng nhẹ/Hồng",
             "price": 189000,
-            "image": "./assets/Resource/New02.jpg",
+            "image": "./img/New01.jpg",
             "review": 142
         },
         {
