@@ -14,19 +14,19 @@ function App() {
 
       <main>
         <div className='Test-Component-Phuc'>
-          {/* <div className='ListSPMoi'>
+          <div className='ListSPMoi'>
             <ListSPMoi />
           </div>
 
-          <div className='ListSPMoi'>
+          {/* <div className='ListSPMoi'>
             <ListSPTheoMua />
           </div>
 
           <div className='ListSPMoi'>
             <ListSPChayBo />
-          </div> */}
+          </div> */} 
 
-          {/* <div>
+          {/*<div>
             <CRUDData />
           </div> */}
 
