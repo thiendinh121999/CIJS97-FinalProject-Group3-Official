@@ -1,5 +1,6 @@
+import { Check } from '@mui/icons-material';
 import React from 'react'
-import data from '../../data/data.json';
+// import data from '../../data/data.json';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -13,6 +14,7 @@ function CRUDData() {
     // const BASE_URL = 'https://66bf265342533c403145399b.mockapi.io/'
 
     const [dataAPI, setDataAPI] = useState(null);
+    const [CheckAPI, setCheckAPI] = useState(0)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,7 +27,7 @@ function CRUDData() {
             }
         };
         fetchData();
-    }, []);
+    }, [CheckAPI]);
 
     if (!dataAPI) {
         return <p>Loading...</p>;
@@ -72,76 +74,79 @@ function CRUDData() {
     //     }
     // }
 
-    const UpdateOne = async (id) => {
-        try {
-            await fetch(`${BASE_URL}/Test/2`, {
-                method: 'PUT',
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    name: "Update test",
-                    type: "Update data",
-                    description: "Test lan thu 3",
-                })
-            })
-        } catch (error) {
-            console.log(error)
-        }
+    // const UpdateOne = async (id) => {
+    //     try {
+    //         await fetch(`${BASE_URL}/Test/2`, {
+    //             method: 'PUT',
+    //             headers: {
+    //                 "Content-Type": "application/json"
+    //             },
+    //             body: JSON.stringify({
+    //                 name: "Update test",
+    //                 type: "Update data",
+    //                 description: "Test lan thu 3",
+    //             })
+    //         })
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
 
-    }
+    // }
 
     const DeleteOne = async (id) => {
         try {
-            await fetch(`${BASE_URL}/Test/3`, {
+            await fetch(`${BASE_URL}/ListSPMoi-ChayBo/${id}`, {
                 method: 'DELETE',
-            })
+            });
+
+            setCheckAPI(prev => prev + 1);
+            setDataAPI(null);
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
+    };
 
     return (
         <div className='container'>
             {/* <button onClick={GetData}>FetchData</button> */}
             {/* <button onClick={CreateData}>Post data mới </button> */}
-            <button onClick={UpdateOne}>Patch cập nhật</button>
-            <button onClick={DeleteOne}>Delete xoá</button>
+            {/* <button onClick={UpdateOne}>Patch cập nhật</button> */}
+            {/* <button onClick={DeleteOne}>Delete xoá</button> */}
 
             <div className="container mt-5">
                 {dataAPI.map((item, idx) => {
                     return <div className="row tm-content-row" key={item.id}>
-                        <div className="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col" style={{width: "100%"}}>
+                        <div className="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col" style={{ width: "100%" }}>
                             <div className="tm-bg-primary-dark tm-block tm-block-products">
                                 <div className="tm-product-table-container">
                                     <table className="table table-hover tm-table-small tm-product-table">
                                         <thead>
                                             <tr>
-                                                <th scope="col" style={{width:'27px'}}>&nbsp;</th>
-                                                <th scope="col" style={{width:'52px'}}>STT</th>
-                                                <th scope="col" style={{width:'33px'}}>ID</th>
-                                                <th scope="col" style={{width:'418px'}}>PRODUCT NAME</th>
-                                                <th scope="col" style={{width:'123px'}}>TYPE</th>
-                                                <th scope="col" style={{width:'210px'}}>DESCRIPTION</th>
-                                                <th scope="col" style={{width:'82px'}}>PRICE</th>
-                                                <th scope="col" style={{width:'82px'}}>IMAGE</th>
+                                                <th scope="col" style={{ width: '27px' }}>&nbsp;</th>
+                                                <th scope="col" style={{ width: '52px' }}>STT</th>
+                                                <th scope="col" style={{ width: '33px' }}>ID</th>
+                                                <th scope="col" style={{ width: '418px' }}>PRODUCT NAME</th>
+                                                <th scope="col" style={{ width: '123px' }}>TYPE</th>
+                                                <th scope="col" style={{ width: '210px' }}>DESCRIPTION</th>
+                                                <th scope="col" style={{ width: '82px' }}>PRICE</th>
+                                                <th scope="col" style={{ width: '82px' }}>IMAGE</th>
                                                 <th scope="col">&nbsp;</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row" style={{width:'27px'}}>
+                                                <th scope="row" style={{ width: '27px' }}>
                                                     <input type="checkbox" />
                                                 </th>
-                                                <td style={{width:'52px'}}>{idx+1}</td>
-                                                <td style={{width:'33px'}}>{item.id}</td>
-                                                <td className="tm-product-name" style={{width:'418px'}}>{item.name}</td>
-                                                <td style={{width:'123px'}}>{item.type}</td>
-                                                <td style={{width:'210px'}}>{item.description}</td>
-                                                <td style={{width:'82px'}}>{item.price}</td>
+                                                <td style={{ width: '52px' }}>{idx + 1}</td>
+                                                <td style={{ width: '33px' }}>{item.id}</td>
+                                                <td className="tm-product-name" style={{ width: '418px' }}>{item.name}</td>
+                                                <td style={{ width: '123px' }}>{item.type}</td>
+                                                <td style={{ width: '210px' }}>{item.description}</td>
+                                                <td style={{ width: '82px' }}>{item.price}</td>
                                                 <td><img src={item.image} alt="" style={{ width: "82px" }} /></td>
                                                 <td>
-                                                    <a href="#" className="tm-product-delete-link">
+                                                    <a onClick={() => DeleteOne(item.id)} className="tm-product-delete-link">
                                                         <i className="far fa-trash-alt tm-product-delete-icon" />
                                                     </a>
                                                 </td>
@@ -156,7 +161,7 @@ function CRUDData() {
                     </div>
                 })}
                 {/* table container */}
-                <div style={{display:'flex', justifyContent:'space-evenly'}}>
+                <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
                     <Link className="btn btn-primary btn-block text-uppercase mb-3" to={"/Admin/AddProduct"}>
                         Add new product
                     </Link>
@@ -182,8 +187,8 @@ function CRUDData() {
                                 </tbody>
                             </table>
                         </div> */}
-                        {/* table container */}
-                        {/* <button className="btn btn-primary btn-block text-uppercase mb-3">
+                {/* table container */}
+                {/* <button className="btn btn-primary btn-block text-uppercase mb-3">
                             Add new category
                         </button>
                     </div>
