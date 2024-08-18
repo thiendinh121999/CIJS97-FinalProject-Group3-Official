@@ -5,7 +5,7 @@ import '../../data/assets/css/style homepage.css';
 import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
-
+import CarouselComponent from './CarouselComponent';
 
 function ListSPChayBo() {
 
@@ -15,17 +15,18 @@ function ListSPChayBo() {
         const fetchData = async () => {
             try {
                 const res = await fetch('https://66bf265342533c403145399b.mockapi.io/ListSPChayBo');
-                const dataAPI = await res.json();
-                setDataAPI(dataAPI);
+                const data = await res.json();
+                setDataAPI(data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
-
         fetchData();
     }, []);
 
-
+    if (!dataAPI) {
+        return <p>Loading...</p>;
+    }
 
     // const [dataProductRun, setDataproductRun] = useState([]);
 
@@ -42,8 +43,9 @@ function ListSPChayBo() {
         <div>
             <div id="newproduct-header">Sản phẩm chạy bộ</div>
             <div className="container">
-                <div className="row g-4 my-5 mx-auto owl-carousel owl-theme">
-                    {Array.isArray(dataAPI) ? (dataAPI.map((item) => {
+                {/* <div className="row g-4 my-5 mx-auto owl-carousel owl-theme"> */}
+                <CarouselComponent>
+                    {dataAPI.map((item) => {
                         return <div className="col product-item mx-auto margin-important" key={item.id}>
                             <div className="product-img">
                                 <img src={item.image} alt="" className="img-fluid d-block mx-auto"></img>
@@ -54,14 +56,12 @@ function ListSPChayBo() {
                                     <button type="button" className="col-6 py-2">
                                         <i className="fa fa-cart-plus"></i> Thêm vào giỏ
                                     </button>
-
                                     <button type="button" className="col-6 py-2">
                                         <Link to={{
                                             pathname: `/Products/${item.id}`
                                         }} state={{ item }}>
                                             <i className="fa fa-cart-plus" style={{ color: "white!" }}></i> Xem chi tiết
                                         </Link>
-
                                     </button>
                                 </div>
                             </div>
@@ -91,11 +91,9 @@ function ListSPChayBo() {
                                 </div>
                             </div>
                         </div>
-                    })) :
-                        <p>Loading...</p>}
-
-                </div>
-
+                    })}
+                </CarouselComponent>
+                {/* </div> */}
             </div>
         </div>
     );

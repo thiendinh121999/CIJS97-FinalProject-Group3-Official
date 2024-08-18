@@ -7,9 +7,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-
-
-
+import CarouselComponent from './CarouselComponent';
 
 function ListSPMoi() {
 
@@ -19,8 +17,8 @@ function ListSPMoi() {
         const fetchData = async () => {
             try {
                 const res = await fetch('https://66beccce42533c40314414cb.mockapi.io/ListSPMoi-ChayBo');
-                const dataAPI = await res.json();
-                setDataAPI(dataAPI);
+                const data = await res.json();
+                setDataAPI(data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -29,8 +27,9 @@ function ListSPMoi() {
         fetchData();
     }, []);
 
-
-
+    if (!dataAPI) {
+        return <p>Loading...</p>;
+    }
 
     // const [dataProductNew, setDatadataProductNew] = useState([]);
 
@@ -47,8 +46,9 @@ function ListSPMoi() {
         <div>
             <div id="newproduct-header">Sản phẩm mới</div>
             <div className="container">
-                <div className="row g-4 my-5 mx-auto owl-carousel owl-theme">
-                {Array.isArray(dataAPI) ? (dataAPI.map((item) => {
+                {/* <div className="row g-4 my-5 mx-auto owl-carousel owl-theme"> */}
+                <CarouselComponent>
+                    {dataAPI.map((item) => {
                         return <div className="col product-item mx-auto margin-important" key={item.id}>
                             <div className="product-img">
                                 <img src={item.image} alt="" className="img-fluid d-block mx-auto"></img>
@@ -66,7 +66,6 @@ function ListSPMoi() {
                                         }} state={{ item }}>
                                             <i className="fa fa-cart-plus" style={{ color: "white!" }}></i> Xem chi tiết
                                         </Link>
-
                                     </button>
                                 </div>
                             </div>
@@ -96,10 +95,9 @@ function ListSPMoi() {
                                 </div>
                             </div>
                         </div>
-                    })) : 
-                    <p>Loading...</p>}
-                    
-                </div>
+                    })}
+                </CarouselComponent>
+                {/* </div> */}
             </div>
         </div>
     );
