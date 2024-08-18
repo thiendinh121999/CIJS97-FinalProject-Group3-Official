@@ -3,9 +3,13 @@ import React from 'react';
 import newtag from "../../data/assets/Resource/NewTag.png";
 import '../../data/assets/css/style homepage.css';
 // import '../../data/assets/css/owl.carousel.css'
+// import '../../data/assets/css/owl.theme.default.css'
 import { useState, useEffect } from 'react';
 // import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
+import CarouselComponent from './CarouselComponent';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 function ListSPTheoMua() {
 
@@ -15,17 +19,18 @@ function ListSPTheoMua() {
         const fetchData = async () => {
             try {
                 const res = await fetch('https://66beccce42533c40314414cb.mockapi.io/ListSPTheoMua');
-                const dataAPI = await res.json();
-                setDataAPI(dataAPI);
+                const data = await res.json();
+                setDataAPI(data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
-
         fetchData();
     }, []);
 
-
+    if (!dataAPI) {
+        return <p>Loading...</p>;
+    }
 
     // const [dataProductSeasonal, setdataProductSeasonal] = useState([]);
 
@@ -42,8 +47,9 @@ function ListSPTheoMua() {
         <div>
             <div id="newproduct-header">Sản phẩm theo mùa</div>
             <div className="container">
-                <div className="row g-4 my-5 mx-auto owl-carousel owl-theme">
-                {Array.isArray(dataAPI) ? (dataAPI.map((item) => {
+                {/* <div className="row g-4 my-5 mx-auto owl-carousel owl-theme"> */}
+                <CarouselComponent>
+                    {dataAPI.map((item) => {
                         return <div className="col product-item mx-auto margin-important" key={item.id}>
                             <div className="product-img">
                                 <img src={item.image} alt="" className="img-fluid d-block mx-auto"></img>
@@ -65,7 +71,6 @@ function ListSPTheoMua() {
                                     </button>
                                 </div>
                             </div>
-
                             <div className="product-info p-3">
                                 <span className="product-type">{item.type}</span>
                                 <a href="#" className="d-block text-dark text-decoration-none py-2 product-name">{item.name}</a>
@@ -91,11 +96,9 @@ function ListSPTheoMua() {
                                 </div>
                             </div>
                         </div>
-                    })) : 
-                    <p>Loading...</p>}
-                    
-                </div>
-
+                    })}
+                </CarouselComponent>
+                {/* </div> */}
             </div>
         </div>
     );

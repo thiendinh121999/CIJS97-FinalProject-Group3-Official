@@ -14,7 +14,7 @@ function App() {
 
       <main>
         <div className='Test-Component-Phuc'>
-          <div className='ListSPMoi'>
+          {/* <div className='ListSPMoi'>
             <ListSPMoi />
           </div>
 
@@ -24,7 +24,7 @@ function App() {
 
           <div className='ListSPMoi'>
             <ListSPChayBo />
-          </div>
+          </div> */}
 
           {/* <div>
             <CRUDData />
