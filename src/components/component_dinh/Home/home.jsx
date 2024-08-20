@@ -2,9 +2,12 @@ import React from "react";
 import MainMenu from "./mainmenu";
 import HomeBanner from "./home-banner";
 import SaleBanner from "./salesbanner";
-import NewProductList from "./newproductlist";
+// import NewProductList from "./newproductlist";
 import ProductRequest from "./productrequest";
 import './home.css'
+import ListSPChayBo from "../../component_Phuc/ListSPChayBo";
+import ListSPMoi from '../../component_Phuc/ListSPMoi'
+import ListSPTheoMua from '../../component_Phuc/ListSPTheoMua'
 
 const HomePage = () => {
     return (
@@ -13,26 +16,25 @@ const HomePage = () => {
             <HomeBanner/>
             <SaleBanner/>
             {/*KHU VỰC SẢN PHẨM MỚI*/}
-            <div id="newproduct-header">Sản phẩm mới</div>
-            {/*Chèn list sản phẩm mới ở đây*/}
+            <ListSPMoi />
            
             {/*KHU VỰC SẢN PHẨN THEO MÙA*/}
             <div class="category-banner">
-                 <img id="seasonal" src={require('../img/Carousel03.jpg')} width="100%"/>
+                 <img id="seasonal" src={require('../../../img/Carousel03.jpg')} width="100%"/>
             </div>
-            {/*Chèn list sản phẩm theo mùa ở đây*/}
+            <ListSPTheoMua />
 
             {/*KHU VỰC SẢN PHẨM ĐỒ CHẠY BỘ*/}
             <div id="category-banner">
-                <img id="running" src={require('../img/Carousel02.jpg')} width="100%"/>
+                <img id="running" src={require('../../../img/Carousel02.jpg')} width="100%"/>
             </div>
-            {/*Chèn list sản phẩm chạy bộ ở đây*/}
+            <ListSPChayBo />
 
             {/*KHU VỰC SẢN PHẨM ĐỒ THUN*/}
             <div id="category-banner">
-                <img id="thun" src={require('../img/Carousel01.jpg')} width="100%"/>
+                <img id="thun" src={require('../../../img/Carousel01.jpg')} width="100%"/>
             </div>
-            {/*Chèn list sản phẩm đồ thun ở đây*/}
+            <ListSPTheoMua />
 
             {/*KHU VỰC REQUEST RIÊNG*/}
             <ProductRequest/>
