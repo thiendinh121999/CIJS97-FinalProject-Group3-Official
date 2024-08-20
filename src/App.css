@@ -131,3 +131,13 @@
   height: 651px;
 }
 
+.size-button {
+  background-color: darkgray;
+  transition: all 0.3s ease;
+}
+
+.size-button.selected {
+  background-color: #afd9af; /* Màu nền khi được chọn */
+  color: white; /* Màu chữ khi được chọn */
+  border: 2px solid black; /* Đường viền khi được chọn */
+}

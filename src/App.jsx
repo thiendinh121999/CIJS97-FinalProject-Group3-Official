@@ -4,35 +4,17 @@ import ListSPChayBo from './components/component_Phuc/ListSPChayBo';
 import ListSPMoi from './components/component_Phuc/ListSPMoi';
 import ListSPTheoMua from './components/component_Phuc/ListSPTheoMua';
 import CRUDData from './components/component_Phuc/CRUDData';
+import Header from './components/component_dinh/Home/header'
+import Footer from './components/component_dinh/Home/footer'
+import HomePage from './components/component_dinh/Home/home'
 
 function App() {
 
   return (
     <div className="App">
-
-      <header>Header</header>
-
-      <main>
-        <div className='Test-Component-Phuc'>
-          <div className='ListSPMoi'>
-            <ListSPMoi />
-          </div>
-
-          {/* <div className='ListSPMoi'>
-            <ListSPTheoMua />
-          </div>
-
-          <div className='ListSPMoi'>
-            <ListSPChayBo />
-          </div> */} 
-
-          {/*<div>
-            <CRUDData />
-          </div> */}
-
-        </div>
-      </main>
-      <footer>Footer</footer>
+      <Header />
+      <HomePage />
+      <Footer />
     </div>
 
   );

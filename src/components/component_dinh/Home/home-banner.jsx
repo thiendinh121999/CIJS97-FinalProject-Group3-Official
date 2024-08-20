@@ -1,6 +1,6 @@
 import React from "react";
-import '../css/owl.carousel.css'
-import '../css/owl.theme.default.css'
+import '../../../css/owl.carousel.css'
+import '../../../css/owl.theme.default.css'
 
 const HomeBanner = ()   => {
     return(
@@ -13,10 +13,10 @@ const HomeBanner = ()   => {
     </div>
     <div className="carousel-inner">
       <div className="carousel-item active">
-        <img src={require('../img/Carousel03.jpg')} className="d-block w-100" alt="Đồ theo mùa"/>
+        <img src={require('../../../img/Carousel03.jpg')} className="d-block w-100" alt="Đồ theo mùa"/>
       </div>
       <div className="carousel-item">
-        <img src={require('../img/Carousel02.jpg')} className="d-block w-100" alt=""/>
+        <img src={require('../../../img/Carousel02.jpg')} className="d-block w-100" alt=""/>
       </div>
     </div>
     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"

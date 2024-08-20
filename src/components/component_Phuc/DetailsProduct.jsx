@@ -33,7 +33,13 @@ function DetailsProduct() {
         setAmountProduct(prev => prev + 1);
     }
 
+
+    const [selectedSize, setSelectedSize] = useState(null);
+
+    const sizes = ['S', 'M', 'L', 'XL', '2XL', '3XL'];
+
     return (
+
         <div className='container text-center' style={{ height: "auto" }}>
             <div style={{ textAlign: "left" }}>
                 <p><a href="http://localhost:3000/">Trang chủ</a> <span> / Chi tiết sản phẩm</span></p>
@@ -111,34 +117,27 @@ function DetailsProduct() {
                                 </div>
                             </div>
 
+                            {/* Chon Size */}
                             <div className="container text-center" style={{ margin: '15px 0px' }}>
                                 <div className="row align-items-start">
-                                    <div className="col rounded-pill" style={{ backgroundColor: "darkgray", margin: '0px 10px' }}>
-                                        <span><h4>S</h4></span>
-                                    </div>
-                                    <div className="col rounded-pill" style={{ backgroundColor: "darkgray", margin: '0px 10px' }}>
-                                        <span><h4>M</h4></span>
-                                    </div>
-                                    <div className="col rounded-pill" style={{ backgroundColor: "darkgray", margin: '0px 10px' }}>
-                                        <span><h4>L</h4></span>
-                                    </div>
-                                    <div className="col rounded-pill" style={{ backgroundColor: "darkgray", margin: '0px 10px' }}>
-                                        <span><h4>XL</h4></span>
-                                    </div>
-                                    <div className="col rounded-pill" style={{ backgroundColor: "darkgray", margin: '0px 10px' }}>
-                                        <span><h4>2XL</h4></span>
-                                    </div>
-                                    <div className="col rounded-pill" style={{ backgroundColor: "darkgray", margin: '0px 10px' }}>
-                                        <span><h4>3XL</h4></span>
-                                    </div>
-
+                                    {sizes.map((size) => (
+                                        <div
+                                            key={size}
+                                            className={`col rounded-pill size-button ${selectedSize === size ? 'selected' : ''}`}
+                                            style={{ margin: '0px 10px', cursor: 'pointer' }}
+                                            onClick={() => setSelectedSize(size)}
+                                        >
+                                            <span><h4>{size}</h4></span>
+                                        </div>
+                                    ))}
                                 </div>
+                                {selectedSize && <div style={{ marginTop: '20px' }}>Bạn đã chọn kích thước: {selectedSize}</div>}
                             </div>
                         </div>
 
+                        {/* Chon So Luong */}
                         <div className='d-flex justify-content-around' id='buy-amount'>
                             <div>
-
                                 <button onClick={() => DecreaseAmount()}>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
@@ -155,6 +154,8 @@ function DetailsProduct() {
                                 </button>
 
                             </div>
+
+                            {/* Button Chon Kich Thuoc */}
                             <div className='d-inline-flex p-2 btn-amout rounded-pill'>
                                 <h6>Chọn Kích Thước</h6>
                             </div>
@@ -200,17 +201,18 @@ function DetailsProduct() {
                     </div>
                 </div>
             </div>
-            
+
             <div style={{ textAlign: "left" }}>
                 <p><h3>Chi tiết sản phẩm</h3></p>
             </div>
             <div style={{ width: "1272px" }}>
-            <img src={product.detailimageBig1} alt="" className='ImageDetailsBig'/>
-            <img src={product.detailimageBig2} alt="" className='ImageDetailsBig'/>
+                <img src={product.detailimageBig1} alt="" className='ImageDetailsBig' />
+                <img src={product.detailimageBig2} alt="" className='ImageDetailsBig' />
             </div>
-            
-            
+
+
         </div>
+
     )
 }
 

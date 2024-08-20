@@ -12,7 +12,7 @@ const Footer = ()=> {
                 <div className="phone-email">
                     <div className="phone">
                         <div>
-                            <img src={require('../img/phoneIcon.png')}/>
+                            <img src={require('../../../img/phoneIcon.png')}/>
                         </div>
                     <div style={{marginLeft: '5px'}}>
                         <p className="phone-head">Hotline</p>
@@ -21,7 +21,7 @@ const Footer = ()=> {
                     </div>
       <div className="mail">
         <div>
-          <img src={require('../img/mailIcon.png')}/>
+          <img src={require('../../../img/mailIcon.png')}/>
         </div>
         <div style={{marginLeft: '5px'}}>
           <p className="mail-head"
@@ -32,10 +32,10 @@ const Footer = ()=> {
       </div>
     </div>
     <div className="socialicon">
-      <a href={0/*Add Contact Rout here*/}><img src={require('../img/youtubeicon.png')} height="35px"/></a>
-      <a href={0/*Add Contact Rout here*/}><img src={require('../img/fbicon.png')} height="35px"/></a>
-      <a href={0/*Add Contact Rout here*/}><img src={require('../img/tiktokicon.png')} height="35px"/></a>
-      <a href={0/*Add Contact Rout here*/}><img src={require('../img/zaloicon.png')} height="35px"/></a>
+      <a href={0/*Add Contact Rout here*/}><img src={require('../../../img/Logo 1.png')} height="35px"/></a>
+      <a href={0/*Add Contact Rout here*/}><img src={require('../../../img/fbicon.png')} height="35px"/></a>
+      <a href={0/*Add Contact Rout here*/}><img src={require('../../../img/tiktokicon.png')} height="35px"/></a>
+      <a href={0/*Add Contact Rout here*/}><img src={require('../../../img/zaloicon.png')} height="35px"/></a>
     </div>
   </div>
         </div>

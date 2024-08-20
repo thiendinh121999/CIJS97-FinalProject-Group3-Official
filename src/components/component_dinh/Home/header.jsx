@@ -17,7 +17,7 @@ const Header = () => {
     return (
         <div id="navbar">
             <div class="logo">
-                <a><img src={require('../img/Logo 1.png')} alt="Ricky Men Wears"/></a>
+                <a><img src={require('../../../img/Logo 1.png')} alt="Ricky Men Wears"/></a>
             </div>
         <ul className="nav-links">
             <li><a class="navitem">TRANG CHỦ</a></li>
