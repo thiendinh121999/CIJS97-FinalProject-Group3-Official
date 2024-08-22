@@ -1,8 +1,11 @@
-import { Check } from '@mui/icons-material';
+
 import React from 'react'
 // import data from '../../data/data.json';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../component_dinh/Home/header';
+import Footer from '../component_dinh/Home/footer';
+import './CRUDData.css'
 
 
 function CRUDData() {
@@ -107,13 +110,15 @@ function CRUDData() {
     };
 
     return (
+        <div className="backgroundCRUDD">
+        <Header/>
         <div className='container'>
             {/* <button onClick={GetData}>FetchData</button> */}
             {/* <button onClick={CreateData}>Post data mới </button> */}
             {/* <button onClick={UpdateOne}>Patch cập nhật</button> */}
             {/* <button onClick={DeleteOne}>Delete xoá</button> */}
 
-            <div className="container mt-5">
+            <div className="container1 mt-5">
                 {dataAPI.map((item, idx) => {
                     return <div className="row tm-content-row" key={item.id}>
                         <div className="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col" style={{ width: "100%" }}>
@@ -195,6 +200,8 @@ function CRUDData() {
                 </div> */}
             </div>
         </div>
+        <Footer/>
+    </div>
     )
 }
 

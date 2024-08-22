@@ -8,10 +8,15 @@ import './home.css'
 import ListSPChayBo from "../../component_Phuc/ListSPChayBo";
 import ListSPMoi from '../../component_Phuc/ListSPMoi'
 import ListSPTheoMua from '../../component_Phuc/ListSPTheoMua'
+import Footer from "./footer";
+import Header from "./header";
 
 const HomePage = () => {
+
+
     return (
         <div className="homepage">
+            <Header/>
             <MainMenu/>
             <HomeBanner/>
             <SaleBanner/>
@@ -38,6 +43,7 @@ const HomePage = () => {
 
             {/*KHU VỰC REQUEST RIÊNG*/}
             <ProductRequest/>
+            <Footer/>
         </div>
     )
 }

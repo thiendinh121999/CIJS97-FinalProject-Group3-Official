@@ -197,6 +197,7 @@ input {
 
 /* Khu vực sản phẩm*/
 #newproduct-header {
+    text-align: center;
     display:block;
     margin-top: 20px;
     margin-bottom: 20px;

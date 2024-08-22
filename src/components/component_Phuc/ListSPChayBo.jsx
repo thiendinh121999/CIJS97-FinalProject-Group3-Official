@@ -1,15 +1,17 @@
 import React from 'react';
 import data from '../../data/data.json';
-import newtag from "../../data/assets/Resource/NewTag.png";
+import runtag from "../../data/assets/Resource/RunTag.png";
 import '../../data/assets/css/style homepage.css';
 import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
 import CarouselComponent from './CarouselComponent';
+import './listsp.css'
 
 function ListSPChayBo() {
 
     const [dataAPI, setDataAPI] = useState(null);
+    const [ CartListRun, setCartListRun ]= useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,6 +25,23 @@ function ListSPChayBo() {
         };
         fetchData();
     }, []);
+
+    //TẠO ARRAY ADD CART
+    const handleAddCartRun = (item) => {
+        const newItemAdded = {
+            itemName: item.name,
+            itemPrice: item.price,
+            itemImage: item.image,
+        };
+        console.log(newItemAdded);
+        setCartListRun(prev => [...prev, newItemAdded]);
+    
+    };
+
+    useEffect(() => {
+        
+        localStorage.setItem('CartListRun', JSON.stringify(CartListRun));
+    }, [CartListRun]);
 
     if (!dataAPI) {
         return <p>Loading...</p>;
@@ -50,10 +69,10 @@ function ListSPChayBo() {
                             <div className="product-img">
                                 <img src={item.image} alt="" className="img-fluid d-block mx-auto"></img>
                                 <span className="heart-icon">
-                                    <img src={newtag} height="20px" alt="New Tag"></img>
+                                    <img src={runtag} height="20px" alt="Run Tag"></img>
                                 </span>
                                 <div className="row btns w-100 mx-auto text-center">
-                                    <button type="button" className="col-6 py-2">
+                                    <button type="button" className="col-6 py-2" onClick={() => handleAddCartRun(item)}>
                                         <i className="fa fa-cart-plus"></i> Thêm vào giỏ
                                     </button>
                                     <button type="button" className="col-6 py-2">
@@ -68,7 +87,9 @@ function ListSPChayBo() {
 
                             <div className="product-info p-3">
                                 <span className="product-type">{item.type}</span>
-                                <a href="#" className="d-block text-dark text-decoration-none py-2 product-name">{item.name}</a>
+                                <Link to={{
+                                            pathname: `/Products/${item.id}`
+                                        }} state={{ item }} className="d-block text-dark text-decoration-none py-2 product-name">{item.name}</Link>
                                 <p className="prodescript">{item.description}</p>
                                 <span className="product-price">VND {item.price}</span>
                                 <div className="rating d-flex mt-1">

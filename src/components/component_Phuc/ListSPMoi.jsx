@@ -8,10 +8,15 @@ import { Link } from 'react-router-dom';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import CarouselComponent from './CarouselComponent';
+import '../../css/owl.carousel.css'
+import '../../css/owl.theme.default.css'
+import './listsp.css'
+//import { useCart } from '../component_dinh/Cart/CartContext';
 
 function ListSPMoi() {
 
     const [dataAPI, setDataAPI] = useState(null);
+    const [ CartListNew, setCartListNew ]= useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -26,6 +31,23 @@ function ListSPMoi() {
 
         fetchData();
     }, []);
+
+    //TẠO ARRAY ADD CART
+    const handleAddCartNew = (item) => {
+        const newItemAdded = {
+            itemName: item.name,
+            itemPrice: item.price,
+            itemImage: item.image,
+        };
+        console.log(newItemAdded);
+        setCartListNew(prev => [...prev, newItemAdded]);
+    
+    };
+
+    useEffect(() => {
+        
+        localStorage.setItem('CartListNew', JSON.stringify(CartListNew));
+    }, [CartListNew]);
 
     if (!dataAPI) {
         return <p>Loading...</p>;
@@ -42,6 +64,9 @@ function ListSPMoi() {
     //     setDatadataProductNew([...newData]);
     // }, [data.productNew]);
 
+    // CHỨC NĂNG ADD TO CART TRANG HOME
+    
+
     return (
         <div>
             <div id="newproduct-header">Sản phẩm mới</div>
@@ -49,14 +74,14 @@ function ListSPMoi() {
                 {/* <div className="row g-4 my-5 mx-auto owl-carousel owl-theme"> */}
                 <CarouselComponent>
                     {dataAPI.map((item) => {
-                        return <div className="col product-item mx-auto margin-important" key={item.id}>
+                        return <div className="col product-item mx-auto" key={item.id}>
                             <div className="product-img">
                                 <img src={item.image} alt="" className="img-fluid d-block mx-auto"></img>
                                 <span className="heart-icon">
                                     <img src={newtag} height="20px" alt="New Tag"></img>
                                 </span>
                                 <div className="row btns w-100 mx-auto text-center">
-                                    <button type="button" className="col-6 py-2">
+                                    <button type="button" className="col-6 py-2" onClick={() => handleAddCartNew(item)}>
                                         <i className="fa fa-cart-plus"></i> Thêm vào giỏ
                                     </button>
 
@@ -72,7 +97,9 @@ function ListSPMoi() {
 
                             <div className="product-info p-3">
                                 <span className="product-type">{item.type}</span>
-                                <a href="#" className="d-block text-dark text-decoration-none py-2 product-name">{item.name}</a>
+                                <Link to={{
+                                            pathname: `/Products/${item.id}`
+                                        }} state={{ item }} className="d-block text-dark text-decoration-none py-2 product-name">{item.name}</Link>
                                 <p className="prodescript">{item.description}</p>
                                 <span className="product-price">VND {item.price}</span>
                                 <div className="rating d-flex mt-1">
