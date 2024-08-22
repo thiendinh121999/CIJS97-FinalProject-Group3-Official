@@ -41,9 +41,9 @@ function DetailsProduct() {
     return (
 
         <div className='container text-center' style={{ height: "auto" }}>
-            <div style={{ textAlign: "left" }}>
+            {/*<div style={{ textAlign: "left" }}>
                 <p><a href="http://localhost:3000/">Trang chủ</a> <span> / Chi tiết sản phẩm</span></p>
-            </div>
+            </div>*/}
 
             <div className='d-flex justify-content-evenly' style={{ marginTop: "20px" }}>
                 <div style={{ width: "8%" }}>

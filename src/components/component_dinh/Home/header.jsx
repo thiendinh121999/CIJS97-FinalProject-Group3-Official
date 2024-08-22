@@ -1,28 +1,59 @@
-import React from "react";
+import React, {useState} from "react";
+import { Link } from 'react-router-dom';
+import Login from "../LoginSignup/login";
 import "./header.css"
 
 
 
 const Header = () => {
-   /* const controlLogin = () => {
-        let loginHtml = document.getElementById("control-login");
-        let currentUser = JSON.parse(localStorage.getItem("user")) || '';
-        let logout = document.getElementById("logout");
-        if (currentUser && currentUser.username) {
-          loginHtml.innerHTML = `${currentUser.username} / <i class="fa-solid fa-arrow-right-from-bracket" id="logout" style={{ cursor: "pointer" }}></i>`;
-        } else {
-          loginHtml.innerHTML = `<a href="login.html" id="login">ĐĂNG NHẬP</a>`;
-        }
-      };*/ /*FOR LATER*/
+  const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem("user")) || null);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    window.location.href = "/";
+    };
+    
+    const isAdmin = currentUser?.username === "Admin"; //check xem co phai Admin dang nhap khong
+
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    
+
+  };
     return (
         <div id="navbar">
             <div class="logo">
-                <a><img src={require('../../../img/Logo 1.png')} alt="Ricky Men Wears"/></a>
+                <Link to="/" onClick={scrollToTop}><img src={require('../../../img/Logo 1.png')} alt="Ricky Men Wears"/></Link>
             </div>
         <ul className="nav-links">
-            <li><a class="navitem">TRANG CHỦ</a></li>
-            <li><a class="navitem">LIÊN HỆ</a></li>
-            <li><span id="control-login" style={{color: 'brown'}}>{/*controlLogin()*/}</span></li>
+            <li><Link to="/" class="navitem" onClick={scrollToTop}>TRANG CHỦ</Link></li>
+            <li><a onClick={() => window.location.replace("/#footer")}  class="navitem">LIÊN HỆ</a></li>
+            {isAdmin && ( // NHỚ THÊM ROUTE ADMIN VÀO LINK
+                <Link to="/shop-management" className="navitem"> 
+                  QUẢN LÝ SHOP
+                </Link>
+              )}
+            <li>
+            {currentUser ? (
+            <div className="logedin-wrap">
+            <span> XIN CHÀO,
+              {currentUser.username} | {" "}
+              <a
+                className="fa-solid logout-btn"
+                id="logout"
+                onClick={handleLogout}
+              >ĐĂNG XUẤT</a>
+            </span>
+            </div>
+          ) : ( 
+            <Link to="/login" id="login">
+              ĐĂNG NHẬP
+            </Link>
+          )}
+            </li>
         </ul>
         </div>
     )

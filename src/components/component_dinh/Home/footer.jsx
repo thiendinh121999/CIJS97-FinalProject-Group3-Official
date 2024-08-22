@@ -32,7 +32,7 @@ const Footer = ()=> {
       </div>
     </div>
     <div className="socialicon">
-      <a href={0/*Add Contact Rout here*/}><img src={require('../../../img/Logo 1.png')} height="35px"/></a>
+      <a href={0/*Add Contact Rout here*/}><img src={require('../../../img/youtubeicon.png')} height="35px"/></a>
       <a href={0/*Add Contact Rout here*/}><img src={require('../../../img/fbicon.png')} height="35px"/></a>
       <a href={0/*Add Contact Rout here*/}><img src={require('../../../img/tiktokicon.png')} height="35px"/></a>
       <a href={0/*Add Contact Rout here*/}><img src={require('../../../img/zaloicon.png')} height="35px"/></a>

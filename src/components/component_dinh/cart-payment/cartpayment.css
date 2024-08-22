@@ -1,0 +1,112 @@
+.background{
+    margin:0;
+    padding:0;
+    height: 100vh;
+    box-sizing:border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url(../../../img/background.png);
+    background-size: 200%;
+    background-position-x: center;
+    background-position-y: center ;
+    background-repeat: no-repeat;
+}
+
+.cart-payment-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.cart-wrap {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    width: 40%;
+    height: 80%;
+    border-radius: 20px;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.payment-wrap {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 40%;
+    height: 80%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.cart-payment-header{
+    font-size: 30px;
+}
+
+.cartlist-wrap{
+    overflow-y: overlay;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent(255, 255, 255);
+    width: 80%;
+    height: 60%;
+    border-radius: 20px;
+    border: 1px solid gray;
+
+}
+
+.cartlist-header{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    width:90%;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(194, 194, 194);
+}
+
+.cartlist-header-product {
+    margin-left: 5%;
+}
+
+.cart-payment-header-price {
+    margin-right:5%;
+}
+.total-price-wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 120%;
+    margin-top: 20px;
+    margin-left: 30%;
+    width: 40%;
+}
+
+.total-price-text{
+    color:orangered
+}
+
+.salecode-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 120%;
+    margin-top: 10px;
+    margin-left: 30%;
+    width: 40%;
+}

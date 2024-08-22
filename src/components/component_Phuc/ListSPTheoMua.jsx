@@ -1,6 +1,6 @@
 import React from 'react';
 // import data from '../../data/data.json';
-import newtag from "../../data/assets/Resource/NewTag.png";
+import seasonaltag from "../../data/assets/Resource/SeasonalTag.png";
 import '../../data/assets/css/style homepage.css';
 // import '../../data/assets/css/owl.carousel.css'
 // import '../../data/assets/css/owl.theme.default.css'
@@ -10,11 +10,12 @@ import { Link } from 'react-router-dom';
 import CarouselComponent from './CarouselComponent';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import './listsp.css'
 
 function ListSPTheoMua() {
 
     const [dataAPI, setDataAPI] = useState(null);
-
+    const [ CartListSeasonal, setCartListSeasonal ]= useState([]);
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -27,6 +28,22 @@ function ListSPTheoMua() {
         };
         fetchData();
     }, []);
+
+    const handleAddCartSeasonal = (item) => {
+        const newItemAdded = {
+            itemName: item.name,
+            itemPrice: item.price,
+            itemImage: item.image,
+        };
+        console.log(newItemAdded);
+        setCartListSeasonal(prev => [...prev, newItemAdded]);
+    
+    };
+
+    useEffect(() => {
+        
+        localStorage.setItem('CartListSeasonal', JSON.stringify(CartListSeasonal));
+    }, [CartListSeasonal]);
 
     if (!dataAPI) {
         return <p>Loading...</p>;
@@ -54,10 +71,10 @@ function ListSPTheoMua() {
                             <div className="product-img">
                                 <img src={item.image} alt="" className="img-fluid d-block mx-auto"></img>
                                 <span className="heart-icon">
-                                    <img src={newtag} height="20px" alt="New Tag"></img>
+                                    <img src={seasonaltag} height="20px" alt="New Tag"></img>
                                 </span>
                                 <div className="row btns w-100 mx-auto text-center">
-                                    <button type="button" className="col-6 py-2">
+                                    <button type="button" className="col-6 py-2" onClick={() => handleAddCartSeasonal(item)}>
                                         <i className="fa fa-cart-plus"></i> Thêm vào giỏ
                                     </button>
 
@@ -73,7 +90,9 @@ function ListSPTheoMua() {
                             </div>
                             <div className="product-info p-3">
                                 <span className="product-type">{item.type}</span>
-                                <a href="#" className="d-block text-dark text-decoration-none py-2 product-name">{item.name}</a>
+                                <Link to={{
+                                            pathname: `/Products/${item.id}`
+                                        }} state={{ item }} className="d-block text-dark text-decoration-none py-2 product-name">{item.name}</Link>
                                 <p className="prodescript">{item.description}</p>
                                 <span className="product-price">VND {item.price}</span>
                                 <div className="rating d-flex mt-1">

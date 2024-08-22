@@ -7,6 +7,8 @@ import MainMenu from '../component_dinh/Home/mainmenu';
 import HomeBanner from '../component_dinh/Home/home-banner';
 import SaleBanner from '../component_dinh/Home/salesbanner';
 import ProductRequest from '../component_dinh/Home/productrequest';
+import Header from '../component_dinh/Home/header';
+import Footer from '../component_dinh/Home/footer';
 
 function Product() {
 
@@ -14,12 +16,13 @@ function Product() {
 
     return (
         <div className="homepage">
+            <Header/>
             <MainMenu/>
-            <HomeBanner/>
             <Outlet></Outlet>
             <SaleBanner/>
             {/*KHU VỰC REQUEST RIÊNG*/}
             <ProductRequest/>
+            <Footer/>
         </div>
     )
 }
