@@ -48,7 +48,7 @@ function DetailsProduct() {
         const newItemAdded = {
             itemName: product.name,
             itemPrice: product.price,
-            itemImage: "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden3.jpg",
+            itemImage: ImageShow,
         };
 
 
