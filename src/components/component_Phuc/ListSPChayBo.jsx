@@ -11,7 +11,8 @@ import './listsp.css'
 function ListSPChayBo() {
 
     const [dataAPI, setDataAPI] = useState(null);
-    const [ CartListRun, setCartListRun ]= useState([]);
+    const initCartList = localStorage.getItem("CartListRun") ? JSON.parse(localStorage.getItem("CartListRun")) : [] ;
+    const [ CartListRun, setCartListRun ]= useState(initCartList);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -41,6 +42,8 @@ function ListSPChayBo() {
     useEffect(() => {
         
         localStorage.setItem('CartListRun', JSON.stringify(CartListRun));
+        const event = new Event('storage');
+        window.dispatchEvent(event);
     }, [CartListRun]);
 
     if (!dataAPI) {

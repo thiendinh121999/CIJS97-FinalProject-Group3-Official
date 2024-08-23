@@ -15,7 +15,8 @@ import './listsp.css'
 function ListSPTheoMua() {
 
     const [dataAPI, setDataAPI] = useState(null);
-    const [ CartListSeasonal, setCartListSeasonal ]= useState([]);
+    const initCartList = localStorage.getItem("CartListRun") ? JSON.parse(localStorage.getItem("CartListRun")) : [] ;
+    const [ CartListSeasonal, setCartListSeasonal ]= useState(initCartList);
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -43,6 +44,8 @@ function ListSPTheoMua() {
     useEffect(() => {
         
         localStorage.setItem('CartListSeasonal', JSON.stringify(CartListSeasonal));
+        const event = new Event('storage');
+        window.dispatchEvent(event);
     }, [CartListSeasonal]);
 
     if (!dataAPI) {
