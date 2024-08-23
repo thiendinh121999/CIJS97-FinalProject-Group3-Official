@@ -8,6 +8,9 @@ import Footer from '../Home/footer'
 import { Link } from 'react-router-dom'
 
 const CartPayment = () => {
+
+
+
     return (
         <div className="background">
             <Header/>
@@ -27,12 +30,24 @@ const CartPayment = () => {
                     </div>
                     <form className="salecode-wrap">
                         <div>Mã khuyến mãi:</div>
-                        <input type="text"/>
-                        <button type="submit">Áp mã</button>
+                        <div className="salecode-input-wrap">
+                            <input type="text" className="salecode-input" placeholder="Member only"/>
+                            <button type="submit" className="salecode-btn">Áp mã</button>
+                        </div>
                     </form>
+                    <div className="total-bill-wrap">
+                        <div>Thành tiền:</div>
+                        {/*LOGIC TINH TOAN O DAY*/ }
+                        <div className="total-bill-text"> XXX.XXX.XXX VND</div>
+                    </div>
                 </div>
                 <div className="payment-wrap">
                 <h1 className="cart-payment-header">2. Nhập thông tin thanh toán</h1>
+                <form className="payment-form-wrap">
+                    <div >
+
+                    </div>
+                </form>
                 </div>
             </div>
             <Footer/>

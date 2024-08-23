@@ -93,20 +93,56 @@
     justify-content: space-between;
     font-size: 120%;
     margin-top: 20px;
-    margin-left: 30%;
-    width: 40%;
+    width: 80%;
+    border-bottom: 1px solid grey;
 }
 
 .total-price-text{
-    color:orangered
+    color:black;
 }
 
 .salecode-wrap {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     font-size: 120%;
     margin-top: 10px;
-    margin-left: 30%;
-    width: 40%;
+    width: 80%;
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+}
+
+.salecode-input-wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.salecode-input{
+    width:45%;
+    border-right: none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.salecode-btn{
+    background-color: orangered;
+    color: white;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.total-bill-wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 120%;
+    margin-top: 20px;
+    width: 80%;
+    border-bottom: 1px solid grey;
+}
+
+.total-bill-text{
+    color:orangered
 }

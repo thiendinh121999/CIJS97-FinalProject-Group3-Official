@@ -16,9 +16,11 @@ import './listsp.css'
 function ListSPMoi() {
 
     const [dataAPI, setDataAPI] = useState(null);
-    const [ CartListNew, setCartListNew ]= useState([]);
+    const initCartList = localStorage.getItem("CartListNew") ? JSON.parse(localStorage.getItem("CartListNew")) : [] ;
+    const [ CartListNew, setCartListNew ]= useState(initCartList);
 
     useEffect(() => {
+        
         const fetchData = async () => {
             try {
                 const res = await fetch('https://66beccce42533c40314414cb.mockapi.io/ListSPMoi-ChayBo');
@@ -34,11 +36,15 @@ function ListSPMoi() {
 
     //TẠO ARRAY ADD CART
     const handleAddCartNew = (item) => {
+        
+    
         const newItemAdded = {
             itemName: item.name,
             itemPrice: item.price,
             itemImage: item.image,
         };
+
+
         console.log(newItemAdded);
         setCartListNew(prev => [...prev, newItemAdded]);
     
@@ -47,6 +53,8 @@ function ListSPMoi() {
     useEffect(() => {
         
         localStorage.setItem('CartListNew', JSON.stringify(CartListNew));
+        const event = new Event('storage');
+        window.dispatchEvent(event);
     }, [CartListNew]);
 
     if (!dataAPI) {

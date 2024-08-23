@@ -112,15 +112,15 @@ input {
 
 .counter-wrap{
     position: absolute;
-    left: 50%;
-    right: 50%;;
+    left: 35%;
+    right: 65%;;
     top: 30%;
     bottom: 70%;
-    width:80%;
+    width:100%;
 }
 
 .cart-counter{
-    font-size: 80%;
+    font-size: 90%;
     color: orangered;
 }
 

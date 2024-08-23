@@ -15,31 +15,30 @@ const MainMenu = () => {
 
         //ĐẾM ITEM GIỎ HÀNG (WIP)
  const [totalCartCount, setTotalCartCount] = useState(0);
-  const [cartListNew, setcartListNew] = useState([]);
-  const [cartListRun, setcartListRun] = useState([]);
-  const [cartListSeasonal, setcartListSeasonal] = useState([]);
+
 
       useEffect(() => {
         const updateCartCounts = () => {
-          setcartListNew(JSON.parse(localStorage.getItem("CartListNew")))
-          setcartListRun(JSON.parse(localStorage.getItem("CartListRun")))
-          setcartListSeasonal(JSON.parse(localStorage.getItem("CartListSeasonal")))
+          console.log(localStorage.getItem("CartListNew"))
+          console.log(localStorage.getItem("CartListRun"))
+          console.log(localStorage.getItem("CartListSeasonal"))
+          const countCartListNew = JSON.parse(localStorage.getItem("CartListNew")).length
+          const countCartListRun = JSON.parse(localStorage.getItem("CartListRun")).length
+          const countCartListSeasonal = JSON.parse(localStorage.getItem("CartListSeasonal")).length
 
-          console.log("cartListNew",cartListNew)
-          console.log("cartListRun",cartListRun)
-          console.log("cartListSeasonal",cartListSeasonal)
-            const countNew = cartListNew.length;
-            const countRun = cartListRun.length;
-            const countSeasonal = cartListSeasonal.length;
+          console.log("countCartListNew",countCartListNew)
+          console.log("countCartListRun",countCartListRun)
+         console.log("countCartListSeasonal",countCartListSeasonal)
 
-            setTotalCartCount(countNew + countRun + countSeasonal);
+          setTotalCartCount(countCartListNew + countCartListRun + countCartListSeasonal);
             return;
         };
                     // Call the function initially
                     updateCartCounts();
 
                     // Set up a listener for storage changes
-                    window.addEventListener('localstorage', () => {
+                    window.addEventListener('storage', (e) => {
+                      console.log(e)
                       updateCartCounts()
                       console.log("Storage changed!")
                     });
