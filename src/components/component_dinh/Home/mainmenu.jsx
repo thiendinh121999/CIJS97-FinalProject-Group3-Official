@@ -22,15 +22,19 @@ const MainMenu = () => {
           console.log(localStorage.getItem("CartListNew"))
           console.log(localStorage.getItem("CartListRun"))
           console.log(localStorage.getItem("CartListSeasonal"))
-          const countCartListNew = JSON.parse(localStorage.getItem("CartListNew")).length
-          const countCartListRun = JSON.parse(localStorage.getItem("CartListRun")).length
-          const countCartListSeasonal = JSON.parse(localStorage.getItem("CartListSeasonal")).length
+          console.log(localStorage.getItem("CartListDetailPage"))
+          //localStorage.getItem("CartListNew") ? JSON.parse(localStorage.getItem("CartListNew")).length : 0 ;
+          const countCartListNew = localStorage.getItem("CartListNew") ? JSON.parse(localStorage.getItem("CartListNew")).length : 0 ;
+          const countCartListRun = localStorage.getItem("CartListRun") ? JSON.parse(localStorage.getItem("CartListRun")).length : 0 ;
+          const countCartListSeasonal = localStorage.getItem("CartListSeasonal") ? JSON.parse(localStorage.getItem("CartListSeasonal")).length : 0 ;
+          const countCartListDetailPage = localStorage.getItem("CartListDetailPage") ? JSON.parse(localStorage.getItem("CartListDetailPage")).length : 0 ;
 
           console.log("countCartListNew",countCartListNew)
           console.log("countCartListRun",countCartListRun)
-         console.log("countCartListSeasonal",countCartListSeasonal)
+          console.log("countCartListSeasonal",countCartListSeasonal)
+          console.log("countCartListDetailPage",countCartListDetailPage)
 
-          setTotalCartCount(countCartListNew + countCartListRun + countCartListSeasonal);
+          setTotalCartCount(countCartListNew + countCartListRun + countCartListSeasonal + countCartListDetailPage);
             return;
         };
                     // Call the function initially

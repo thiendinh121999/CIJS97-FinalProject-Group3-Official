@@ -9,6 +9,9 @@ function DetailsProduct() {
     const [ImageShow, setImageShow] = useState(product ? product.detailimage1 : '');
     const [ImageList, setImageList] = useState(product ? [product.detailimage1, product.detailimage2, product.detailimage3, product.detailimage4] : []);
     const [AmoutProduct, setAmountProduct] = useState(1);
+    const initCartList = localStorage.getItem("CartListDetailPage") ? JSON.parse(localStorage.getItem("CartListDetailPage")) : [] ;
+    const [ CartListDetailPage, setCartListDetailPage ]= useState(initCartList);
+
 
     useEffect(() => {
         if (product) {
@@ -37,6 +40,29 @@ function DetailsProduct() {
     const [selectedSize, setSelectedSize] = useState(null);
 
     const sizes = ['S', 'M', 'L', 'XL', '2XL', '3XL'];
+
+    //TẠO ARRAY ADD CART
+    const handleAddCartDetailPage = (product) => {
+        
+    
+        const newItemAdded = {
+            itemName: product.name,
+            itemPrice: product.price,
+            itemImage: "https://media3.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/May2024/qddpden3.jpg",
+        };
+
+
+        console.log(newItemAdded);
+        setCartListDetailPage(prev => [...prev, newItemAdded]);
+    
+    };
+
+    useEffect(() => {
+        
+        localStorage.setItem('CartListDetailPage', JSON.stringify(CartListDetailPage));
+        const event = new Event('storage');
+        window.dispatchEvent(event);
+    }, [CartListDetailPage]);
 
     return (
 
@@ -67,9 +93,9 @@ function DetailsProduct() {
                         <p className='text-start'>{product.type}</p>
 
                         <div style={{ textAlign: "left" }}>
-                            <div style={{ margin: '5px 0px' }}><s>199.000đ</s></div>
+                            {/*<div style={{ margin: '5px 0px' }}><s>199.000đ</s></div>*/}
                             <div style={{ margin: '5px 0px' }}>
-                                <h3>{product.price}<span style={{ backgroundColor: "blue", color: "white", marginLeft: "10px", borderRadius: "10px" }}>-50%</span></h3>
+                                <h3>{product.price}<span style={{ backgroundColor: "blue", color: "white", marginLeft: "10px", borderRadius: "10px" }}>-50% cho thành viên</span></h3>
                             </div>
 
                             <div className='rounded-pill' style={{ margin: '10px 0px', backgroundColor: '#dbd7d7', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -156,8 +182,8 @@ function DetailsProduct() {
                             </div>
 
                             {/* Button Chon Kich Thuoc */}
-                            <div className='d-inline-flex p-2 btn-amout rounded-pill'>
-                                <h6>Chọn Kích Thước</h6>
+                            <div onClick={() =>{handleAddCartDetailPage(product)}} className='d-inline-flex p-2 btn-amout rounded-pill'>
+                                <h6 >Thêm vào giỏ hàng</h6>
                             </div>
                         </div>
 

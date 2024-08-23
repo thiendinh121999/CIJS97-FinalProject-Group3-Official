@@ -10,6 +10,9 @@ const Header = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("user");
+    localStorage.removeItem("CartListNew");
+    localStorage.removeItem("CartListRun");
+    localStorage.removeItem("CartListSeasonal");
     window.location.href = "/";
     };
     
