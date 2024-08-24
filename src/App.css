@@ -139,3 +139,7 @@
   color: white; /* Màu chữ khi được chọn */
   border: 2px solid black; /* Đường viền khi được chọn */
 }
+
+.d-inline-flex.p-2.btn-amout.rounded-pill {
+  width: 340px !important;
+}
