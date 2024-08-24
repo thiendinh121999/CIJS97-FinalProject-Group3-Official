@@ -50,7 +50,7 @@ function AdminPage() {
 
 
 
-                            <li>
+                            {/*<li>
                                 <a className="nav-link" href="accounts.html">
                                     <i className="far fa-user" /> Accounts
                                 </a>
@@ -82,13 +82,13 @@ function AdminPage() {
                                         Customize
                                     </a>
                                 </div>
-                            </li>
+                            </li>*/}
                         </ul>
                     </div>
                 </nav>
                 <Outlet></Outlet>
-                <Footer />
             </div>
+            <Footer />
         </div>
     )
 }

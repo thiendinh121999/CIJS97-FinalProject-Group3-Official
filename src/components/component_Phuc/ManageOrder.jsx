@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import './ManageProduct.css'
 
 function ManageOrder() {
     const BASE_URL_ORDER = 'https://66c6baee8b2c10445bc77fa9.mockapi.io/productorder';
@@ -43,7 +44,7 @@ function ManageOrder() {
     };
 
     return (
-        <div>
+        <div className="backgroundorder">
             <div className="col-12 tm-block-col">
                 <div className="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
                     <h2 className="tm-block-title">Orders List</h2>
