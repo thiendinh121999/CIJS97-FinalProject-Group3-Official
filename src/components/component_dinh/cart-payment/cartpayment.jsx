@@ -21,6 +21,8 @@ const CartPayment = () => {
     const totalBillPreset = totalPrice;
     const [totalBill, settotalBill] = useState(totalBillPreset)
     console.log("totalBillPreset",totalBillPreset)
+    const initConfirmedBuyList = [...cartDetailNew, ...cartDetailRun, ...cartDetailSeasonal, ...cartDetailDetailPage] || []
+    const [confimredBuyList, setConfirmedBuyList] = useState(initConfirmedBuyList);
     //Update cart list
     useEffect (()=> {
         const updateDetailList = () => {
@@ -105,6 +107,56 @@ const CartPayment = () => {
         settotalBill(0)
     }
     
+    //Xac nhan mua hang
+
+    const handleConfirmPurchase = async (e) =>{
+        e.preventDefault();
+        setConfirmedBuyList([...cartDetailNew, ...cartDetailRun, ...cartDetailSeasonal, ...cartDetailDetailPage]);
+        const buyername = document.getElementById("buyername").value;
+        const buyerphone = document.getElementById("buyerphone").value;
+        const buyeradress = document.getElementById("buyeradress").value;
+        const orderlist = confimredBuyList;
+        const totalbill = totalBill;
+        const cardnumber = document.getElementById("buyercardnumber").value;
+        console.log("orderlist", orderlist)
+        
+        const confirmedOrder = {
+            buyername,
+            buyerphone,
+            buyeradress,
+            orderlist,
+            totalbill,
+            cardnumber
+        }
+        try {
+            // Make a POST request to the mock API
+            const response = await fetch(
+              "https://66c6baee8b2c10445bc77fa9.mockapi.io/productorder", // Corrected API endpoint
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(confirmedOrder),
+              }
+            );
+      
+            if (response.ok) {
+            alert("Đơn hàng đã được tiếp nhận, cám ơn bạn đã mua hàng!");
+            window.location.href = "/"; // Redirect to home
+            localStorage.removeItem("CartListNew");
+            localStorage.removeItem("CartListRun");
+            localStorage.removeItem("CartListSeasonal");
+            localStorage.removeItem("CartListDetailPage");
+            } else {
+              alert("Đơn hàng chưa được tiếp nhận, xin vui lòng thử lại");
+            }
+          } catch (error) {
+            console.error("Error registering user:", error);
+          }
+          
+          
+    }
 
     return (
         <div className="background">
@@ -170,30 +222,30 @@ const CartPayment = () => {
                 </div>
                 <div className="payment-wrap">
                 <h1 className="cart-payment-header">2. Thông tin mua hàng</h1>
-                <form className="payment-form-wrap">
+                <form className="payment-form-wrap" onSubmit={handleConfirmPurchase}>
                     <div className="payment-form-item-wrap" >
                         <label>Họ tên của bạn:</label>
-                        <input type="text" className="payment-input"/>
+                        <input type="text" className="payment-input" id="buyername" required/>
                     </div>
                     <div className="payment-form-item-wrap">
                         <label>Số điện thoại của bạn:</label>
-                        <input type="text" className="payment-input"/>
+                        <input type="text" className="payment-input" id="buyerphone" required/>
                     </div>
                     <div className="payment-form-item-wrap">
                         <label>Email của bạn:</label>
-                        <input type="email" className="payment-input"/>
+                        <input type="email" className="payment-input" id="buyeremail" required/>
                     </div>
                     <div className="payment-form-item-wrap">
                         <label>Địa chỉ giao hàng:</label>
-                        <input type="text" className="payment-input"/>
+                        <input type="text" className="payment-input" id="buyeradress" required/>
                     </div>
                     <div className="payment-form-item-wrap">
                         <label>Thẻ thanh toán:</label>
-                        <input type="text" className="payment-input"/>
+                        <input type="text" className="payment-input" id="buyercardnumber" required/>
                     </div>
                     <div className="payment-form-item-wrap">
                         <label>Mã CVC(*):</label>
-                        <input type="text" className="payment-input"/>
+                        <input type="text" className="payment-input" required/>
                     </div>
                     <button type="submit" className="payconfirm-btn">Xác nhận mua hàng</button>
                 </form>
