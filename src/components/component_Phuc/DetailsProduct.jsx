@@ -71,7 +71,7 @@ function DetailsProduct() {
                 <p><a href="http://localhost:3000/">Trang chủ</a> <span> / Chi tiết sản phẩm</span></p>
             </div>*/}
 
-            <div className='d-flex justify-content-evenly' style={{ marginTop: "20px" }}>
+            <div className='d-flex justify-content-evenly container' style={{ marginTop: "20px" }}>
                 <div style={{ width: "8%" }}>
                     <div >
                         {ImageList.map(((item, idx) => {
