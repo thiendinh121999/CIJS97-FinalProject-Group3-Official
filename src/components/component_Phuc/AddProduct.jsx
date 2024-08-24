@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function AddProduct() {
     const inputname = useRef(null);
@@ -37,21 +38,24 @@ function AddProduct() {
                     review: inputreview.current.value,
                     detailimage1: inputdetailimage1.current.value,
                     detailimage2: inputdetailimage2.current.value,
-                    detailimage3:inputdetailimage3.current.value,
+                    detailimage3: inputdetailimage3.current.value,
                     detailimage4: inputdetailimage4.current.value,
                     detailimageBig1: inputdetailimageBig1.current.value,
                     detailimageBig2: inputdetailimageBig1.current.value,
                 })
             })
-            setUpdateProduct("Thêm thành công")  
+            setUpdateProduct("Thêm thành công")
         } catch (error) {
-            setUpdateProduct("Thêm thất bại")  
+            setUpdateProduct("Thêm thất bại")
             console.log(error)
         }
-
-
     }
 
+    const BacktoManageProduct = () => {
+        <Link className="btn btn-primary btn-block text-uppercase mb-3" to={"/Admin/ManageProduct/AddProduct"}>
+            Add new product
+        </Link>
+    }
 
     return (
         <div className='container'>
@@ -230,17 +234,35 @@ function AddProduct() {
                                                 </div>
                                             </form>
                                         </div>
-                                        <div className="col-12">
-                                            <button
-                                                onClick={PushProduct}
-                                                type="submit"
-                                                className="btn btn-primary btn-block text-uppercase"
-                                            >
-                                                Add Product Now
-                                            </button>
 
-                                            <h4>{UpdateProduct}</h4>
+                                        <div className="d-flex justify-content-around">
+                                            <div className="col-12">
+                                                <button
+                                                    onClick={PushProduct}
+                                                    type="button"
+                                                    className="btn btn-primary btn-block text-uppercase"
+                                                >
+                                                    Add Product Now
+                                                </button>
+
+                                                <h4>{UpdateProduct}</h4>
+                                            </div>
+                                            <div>
+
+
+                                                <button
+                                                    onClick={BacktoManageProduct}
+                                                    type="button"
+                                                    className="btn btn-success"
+                                                >
+                                                    
+                                                    <Link to={"/Admin/ManageProduct"} style={{color: "white"}}>
+                                                    Xong
+                                                    </Link>
+                                                </button>
+                                            </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>

@@ -3,7 +3,7 @@ import './App.css';
 import ListSPChayBo from './components/component_Phuc/ListSPChayBo';
 import ListSPMoi from './components/component_Phuc/ListSPMoi';
 import ListSPTheoMua from './components/component_Phuc/ListSPTheoMua';
-import CRUDData from './components/component_Phuc/CRUDData';
+import CRUDData from './components/component_Phuc/ManageProduct';
 import Header from './components/component_dinh/Home/header'
 import Footer from './components/component_dinh/Home/footer'
 import HomePage from './components/component_dinh/Home/home'

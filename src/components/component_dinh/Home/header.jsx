@@ -35,7 +35,7 @@ const Header = () => {
             <li><Link to="/" class="navitem" onClick={scrollToTop}>TRANG CHỦ</Link></li>
             <li><a onClick={() => window.location.replace("/#footer")}  class="navitem">LIÊN HỆ</a></li>
             {isAdmin && ( // NHỚ THÊM ROUTE ADMIN VÀO LINK
-                <Link to="/shop-management" className="navitem"> 
+                <Link to="/Admin/ManageProduct" className="navitem"> 
                   QUẢN LÝ SHOP
                 </Link>
               )}
