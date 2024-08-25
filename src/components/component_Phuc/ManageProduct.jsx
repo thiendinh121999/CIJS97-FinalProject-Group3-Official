@@ -96,7 +96,7 @@ function ManageProduct() {
 
     const DeleteOne = async (id) => {
         try {
-            await fetch(`${BASE_URL}/ListSPMoi-ChayBo/${id}`, {
+            await fetch(`${BASE_URL_PRODUCT}/ListSPMoi-ChayBo/${id}`, {
                 method: 'DELETE',
             });
 
