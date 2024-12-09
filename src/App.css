@@ -112,10 +112,14 @@
 .btn-amout {
   width: 375px;
   height: 40px;
-  background-color: #7aa7e7;
+  background-color: #00183a;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.btn-amout:hover {
+  background-color: orangered;
 }
 
 .ImageDetailsBig {

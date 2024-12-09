@@ -1,23 +1,14 @@
-body{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    display: flex;
-    flex-direction: column;
+*{
+    font-family: 'Pangea Afrikan Trial SemiBold';
 }
-
-/* Design thanh header*/
 #navbar {
     background-color: white;
     height: fit-content;
-    padding: 10px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/*tạo double shadơ*/
-    position: sticky;
-    position: -webkit-sticky;
-    z-index:10;
+    z-index: 101 !important;
     top: 0;
 }
   
@@ -25,11 +16,6 @@ a{
     text-decoration: none;
 }
 
-.review {
-    font-family: 'Pangea Afrikan Trial SemiBold' !important; 
-    font-size: 15px !important;
-    margin-left: 5px !important;
-}
 
 a:hover.navitem {
     background-color: black;
@@ -39,6 +25,10 @@ a:hover.navitem {
 a:hover#login {
     background-color: red;
     color: white;
+}
+
+a:hover .mainmenu-link-product{
+    background-color: rgb(35, 12, 168);
 }
 
 a:hover .mainmenu-link-item{
@@ -79,6 +69,7 @@ a:hover .mainmenu-link-item{
     font-weight: 600;
     font-size:12px;
     font-family: 'Pangea Afrikan Trial SemiBold';
+    margin-top: 0;
     margin-bottom: 0 !important;
     gap: 10px;
 }
@@ -88,401 +79,53 @@ a:hover .mainmenu-link-item{
     padding: 15px 5px 15px 5px;
     border-radius: 7px;
     color: black;
+    cursor: pointer;
 }
 
-/*Design thanh menu chính*/
-.mainmenu {
-    background-color:rgb(40, 36, 36);
-    height: fit-content;
-    padding: 0px 10px 0px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/*tạo double shadơ*/
-    z-index: 10;/*làm thanh đầu trang luôn nổi lên trên tất cả các element còn lại trên trang web*/
-    position:-webkit-sticky;
-    position: sticky;
-    top: 46px;
-}
-
-.mainmenu-logo{
-    width: 20%;
-}
-
-.mainmenu-link {
-    display:flex;
-    flex-wrap:wrap;
-    width: 60%;
-    height: 100%;
-    justify-content:center;
-    gap: 0;
-    align-items: center;
-    letter-spacing: 2px;
-    font-weight:100;
-    font-size:11px;
-    font-family: 'Pangea Afrikan Trial Medium';
-}
-
-.mainmenu-link-product {
-    box-sizing: content-box;
-    height:100%;
-    line-height: 70px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: orangered;
-    color: white;
-}
-.mainmenu-link-item {
-    box-sizing: content-box;
-    padding-left: 20px;
-    padding-right: 20px;
-    height:100%;
-    line-height: 70px;
+a:hover#login {
+    background-color: red;
     color: white;
 }
 
-.searchbar {
-    width: 75%;
-    height: 60%;
-    box-sizing: border-box;
-    border: 2px solid #d4d4d4;
-    border-radius: 20px;
-    background-color: white;
-    display: flex;
-    gap: 10px;
-    padding: 0 5px 0px 5px;
-    align-items: center;
+a:hover .mainmenu-link-item{
+    background-color: rgb(100, 100, 100);
 }
 
-input {
-    outline: none;
-}
-
-.search-input {
-    color: rgb(44, 43, 43);
-    height: 100%;
-    width:80%;
-    font-size: 15px;
-    font-family: 'Pangea Afrikan Trial Medium';
-}
-
-.search-input > input {
-    background-color: white;
-    height: 100%;
-    width: 100%;
-    border: 0px;
-    font-family: 'Pangea Afrikan Trial Medium';
-}
-
-.search-icon img {
-    height: 30px;
-}
-
-.img-cart {
-    width: 5%;
-}
-
-.img-cart img {
-    height: 30px;
-}
-
-.search-cart {
-    display:flex;
-    width: 20%;
-    height: 100%;
-    justify-content: flex-end;
-    gap: 10px;
-    align-items: center;
-}
-
-/*Hình khuyến mại*/
-.img-sale img{
-    width: 100%;
-}
-
-/* Khu vực sản phẩm*/
-#newproduct-header {
-    display:block;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right:auto;
+#login{
+    height: 85%;
+    border-radius: 7px;
     box-sizing: content-box;
-    font-size: 30px;
-    padding: 10px 20px 10px 20px;
-    border: 3px solid rgb(40, 36, 36);
-    border-radius: 50px;
+    padding: 15px 5px 15px 5px;
+    background-color: rgb(238, 238, 238);
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color:#f84258;
+}
+
+.logout-btn{
+    box-sizing: content-box;
+    padding: 15px 5px 15px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Pangea Afrikan Trial SemiBold' ;
+    color: red;
+}
+
+.logout-btn:hover{
+    background: #f84258;
+    color: white
+}
+
+.logedin-user{
+    color: 'black'; 
     font-family: 'Pangea Afrikan Trial SemiBold';
-    color:rgb(40, 36, 36);
+    font-size:'12px';
 }
 
-
-.homepage-products__slides {
-    margin-left: -9px;
-    margin-right: -9px;
-}
-
-.product-item{
-    border: 1px solid rgb(219, 219, 219);
-    border-radius: 15px;
-}
-.product-img{
-    position: relative;
-    overflow: hidden;
-}
-.btns{
-    position: absolute;
-    left: 0;
-    bottom: -100%;
-    font-size: 15px;
-    font-weight: 300;
-    transition: all 0.3s ease-in-out;
-}
-.btns button{
-    border: none;
-    background-color: rgb(39, 39, 39);
-    color: #fff;
-    transition: all 0.3s ease-in-out;
-}
-.btns button:hover{
-    color: #fcb941;
-}
-.product-img:hover .btns{
-    bottom: 0;
-}
-
-.heart-icon{
-    position: absolute;
-    top: 16px;
-    right: 15px;
-    font-size: 18px;
-}
-
-.product-type{
-    font-size: 13px;
-    opacity: 0.8;
-}
-.product-name{
-    transition: all 0.3s ease-in-out;
-}
-.product-name:hover{
-    color: orange!important;
-}
-.product-price{
-    color: orangered;
-}
-.rating{
-    font-size: 13px;
-}
-.product-item{
-    width: 300px;
-}
-.prodescript{
-    font-size: 13px;
-    color: rgb(83, 83, 83);
-}
-.category-banner {
-    width: 100%;
-}
-.category-header {
-    box-sizing: border-box;
-    padding: 0px 25px;
-    Display: flex;
-    justify-content: space-between;
-}
-.category-title {
-    margin-top: 40px;
-    font-family: 'Pangea Afrikan Trial SemiBold';
-    font-size: 40px;
-    color: rgb(40, 36, 36);
-}
-#container-request {
-    width: 100%;
-    height: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px 20px 20px 20px;
-    background-color: rgb(156, 156, 156);
-    background-image: url('../../../img/mceclip1_15.png');
-    background-blend-mode:color-burn;
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-
-.container-form{
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    margin-right: 80px;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 30%;
-    height: fit-content;
-    border-radius: 20px;
-    padding: 30px 20px 30px 20px;
-}
-
-.form-header {
-    color:rgb(40, 36, 36); 
-    font-size: 25px; 
-    font-family: 'Pangea Afrikan Trial SemiBold'; 
-    width: 100%;
-    margin-bottom: 0;
-}
-
-.form-label{
-    color: rgb(145, 143, 143); 
-    font-weight: light; 
-    font-size: 15px; 
-    font-family: 'Pangea Afrikan Trial Light'; 
-    margin-bottom: 5px
-}
-
-.form-input{
-    width:100%; 
-    border: 1px solid rgb(163, 163, 163); 
-    border-radius: 7px; 
-    font-weight: light; 
-    font-size: 15px;
-    font-family: 'Pangea Afrikan Trial Light';
-    margin-bottom:10px 
-}
-
-.form-title {
-    font-size: 30px;
-    color: rgb(40, 36, 36);
-}
-.form {
-    font-size: 10px;
-}
-.container-request-mess{
-    width: 30%;
-    margin-left: 100px;  
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.container-request-mess p {
-    color:white; 
-    font-weight: light; 
-    font-size: 50px; 
-    font-family: 'Pangea Afrikan Trial SemiBold'; 
-    width: 100%; 
-    margin-top:auto; 
-    margin-bottom: auto;
-}
-
-.phone-email{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 60%;
-}
-.phone{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.mail{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.phone-head{
-    color: rgb(255, 255, 255); 
-    font-weight: light; 
-    font-size: 17px; 
-    font-family: 'Pangea Afrikan Trial Light'; 
-    margin-bottom: 5px;
-}
-
-.phone-content{
-    color: white; 
-    font-weight: light; 
-    font-size: 25px; 
-    font-family: 'Pangea Afrikan Trial Light';
-}
-
-.mail img{
-    height: 30px;
-}
-
-.phone img{
-    height: 30px;
-}
-
-.mail-head{
-    color: rgb(255, 255, 255);
-    font-weight: light; 
-    font-size: 17px; 
-    font-family: 'Pangea Afrikan Trial Light'; 
-    margin-bottom: 5px;    
-}
-.mail-content{
-    color: white; 
-    font-weight: light; 
-    font-size: 25px; 
-    font-family: 'Pangea Afrikan Trial Light';
-}
-
-#submit-button{
-border:0px; 
-border-radius: 20px; 
-font-family: 'Pangea Afrikan Trial SemiBold';
-color:white; 
-background-color: black; 
-width:100%;
-padding: 10px 3px 10px 3px;
-}
-#submit-button:hover{
-    background-color: orangered;
-}
-
-#footer {
-    background-color: black;
-    width: 100%;
-    height: 150px;
-    display: flex;
-    flex-direction: row;
-    padding: 10px 10px 10px 10px;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-.footer-message {
-    width: 30%;
-}
-
-.footer-message-header{
-    color:white; 
-    font-size: 25px; 
-    font-family: 'Pangea Afrikan Trial SemiBold';
-}
-
-.footer-message-content{
-    color:white; 
-    font-size: 12px; 
-    font-family: 'Pangea Afrikan Trial Light'; 
-    width: 60%;
-}
-
-.socialicon{
-    display: flex;
-    flex-direction: row;
-    width: 20%;
-    gap: 25px;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.socialicon img{
-    height: 30px;
+.logedin-wrap {
+    background-color: rgb(238, 238, 238);
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-left: 5px;
+    border-radius: 7px;
 }
 
 @media screen and (width <= 600px) {

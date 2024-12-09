@@ -8,19 +8,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import DetailsProduct from './components/component_Phuc/DetailsProduct';
+import DetailsProduct from './pages/product-detail/DetailsProduct';
 
-import Product from './components/component_Phuc/Product';
-import AddProduct from './components/component_Phuc/AddProduct';
+import Product from './components/Product';
+import AddProduct from './components/AddProduct';
 
-import Login from './components/component_dinh/LoginSignup/login';
-import Signup from './components/component_dinh/LoginSignup/signup';
-import CartPayment from './components/component_dinh/cart-payment/cartpayment';
-import AdminPage from './components/component_Phuc/AdminPage';
+import Login from './pages/LoginSignup/login';
+import Signup from './pages/LoginSignup/signup';
+import CartPayment from './pages/cart-payment/cartpayment';
+import AdminPage from './pages/admin/AdminPage';
 
-import ManageProduct from './components/component_Phuc/ManageProduct';
-import ManageRequest from './components/component_Phuc/ManageRequest';
-import ManageOrder from './components/component_Phuc/ManageOrder';
+import ManageProduct from './components/ManageProduct';
+import ManageRequest from './components/ManageRequest';
+import ManageOrder from './components/ManageOrder';
 //import { CartProvider } from './components/component_dinh/Cart/CartContext';
 // import ReactDOM from 'react-dom';
 // import BrowserRouter from 'react-router-dom';
